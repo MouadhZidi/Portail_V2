@@ -1,0 +1,47 @@
+#annee {
+  font-size: 8px;
+}
+#debut {
+  font-size: 8px;
+}
+#fin {
+  font-size: 8px;
+}
+#dateprevu {
+  font-size: 8px;
+}
+#retour {
+  font-size: 8px;
+}
+#jour {
+  font-size: 8px;
+}
+#nb {
+  font-size: 8px;
+}
+#cumm {
+  font-size: 8px;
+}
+
+.p {
+  text-align: right;
+}
+.h1 {
+  text-align: right;
+}
+
+#ref {
+  background: #e9ecef;
+  border: 1px solid #e9ecef;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#ref:focus {
+  background: #ffffff;
+  outline: none;
+  -webkit-box-shadow: inset 0px 0px 5px #e9ecef;
+  -moz-box-shadow: inset 0px 0px 5px #e9ecef;
+  box-shadow: inset 0px 0px 5px #e9ecef;
+}

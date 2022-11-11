@@ -1,0 +1,23 @@
+#ref {
+    background: #e9ecef;
+    border: 1px solid #e9ecef;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size:12px;
+    font-weight: bold;
+  
+  }
+  
+  #ref:focus {
+    background: #ffffff;
+    outline: none;
+    -webkit-box-shadow: inset 0px 0px 5px #e9ecef;
+    -moz-box-shadow: inset 0px 0px 5px #e9ecef;
+    box-shadow: inset 0px 0px 5px #e9ecef;
+  }
+  
+  #side-bar {
+    width: 25%;
+  }
+  

@@ -1,0 +1,1180 @@
+<div class="container-fluid">
+  <app-menu></app-menu>
+  <div class="row">
+    <!-- <div class="col-md-2"></div> -->
+    <div class="col-md-12" style="width: 100%;padding-left: 13.5%;">
+      <div class="card-body">
+        <div class="card">
+          <div class="card-body">
+            <h4 style="color: #001b85">Gestion de la paie</h4>
+            <hr />
+
+            <table style="border: none" style="width: 100%">
+              <tr>
+                <td>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault1"
+                      [(ngModel)]="x"
+                      value="1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Pointage
+                    </label>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      value="2"
+                      name="flexRadioDefault"
+                      [(ngModel)]="x"
+                      id="flexRadioDefault2"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Contrôle
+                    </label>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      value="3"
+                      name="flexRadioDefault"
+                      [(ngModel)]="x"
+                      id="flexRadioDefault3"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault3">
+                      Etat après paie
+                    </label>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      value="4"
+                      name="flexRadioDefault"
+                      [(ngModel)]="x"
+                      id="flexRadioDefault4"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault4">
+                      Déclaration
+                    </label>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      value="5"
+                      name="flexRadioDefault"
+                      [(ngModel)]="x"
+                      id="flexRadioDefault5"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault5">
+                      Budget
+                    </label>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      value="6"
+                      name="flexRadioDefault"
+                      [(ngModel)]="x"
+                      id="flexRadioDefault6"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault6">
+                      Autres
+                    </label>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <hr />
+
+        <!-- <div *ngIf="x == '1'">
+          <ul class="nav nav-tabs">
+            <li [ngClass]="{ active: tab == 1 }" (click)="tab = 1">
+              <a class="nav-link">Identite</a>
+            </li>
+            <li [ngClass]="{ active: tab == 2 }" (click)="tab = 2">
+              <a class="nav-link">Adresse & Contact</a>
+            </li>
+            <li [ngClass]="{ active: tab == 3 }" (click)="tab = 3">
+              <a class="nav-link">Niveau d'instruction</a>
+            </li>
+          </ul>
+          <br />
+          <div>
+            <div [ngSwitch]="tab">
+              <div *ngSwitchCase="1">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="form-group row">
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Nom 2éme langue</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="password"
+                            class="form-control"
+                            placeholder="nom 2éme langue"
+                          />
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >prenom 2éme langue</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="prenom 2éme langue"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Presum Nais</label
+                        >
+                        <div class="col-sm-3">
+                          <select
+                            type="password"
+                            class="form-control"
+                            placeholder="Presum Nais"
+                          ></select>
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Service militaire</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Service militaire"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Date naissance</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="date"
+                            class="form-control"
+                            placeholder="nom 2éme langue"
+                          />
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Lieu naissance</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Lieu naissance"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Sexe</label
+                        >
+                        <div class="col-sm-3">
+                          <select
+                            class="form-control"
+                            placeholder="sexe"
+                          ></select>
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Nationalité</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Nationalité"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Type d'identité</label
+                        >
+                        <div class="col-sm-3">
+                          <select
+                            class="form-control"
+                            placeholder="Type d'identité"
+                          ></select>
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >N identité</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="N identité"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Date d'identité</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="date"
+                            class="form-control"
+                            placeholder="nom 2éme langue"
+                          />
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Lieu émission identité</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Lieu émission identité"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Sit.familiale</label
+                        >
+                        <div class="col-sm-3">
+                          <select
+                            type="password"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Sit.familiale"
+                          ></select>
+                        </div>
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Groupe sanguin</label
+                        >
+                        <div class="col-sm-3">
+                          <select
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="prenom 2éme langue"
+                          ></select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div *ngSwitchCase="2">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="form-group row">
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Nom 2éme langue</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="password"
+                            class="form-control"
+                            placeholder="nom 2éme langue"
+                          />
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >prenom 2éme langue</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="prenom 2éme langue"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Presum Nais</label
+                        >
+                        <div class="col-sm-3">
+                          <select
+                            type="password"
+                            class="form-control"
+                            placeholder="Presum Nais"
+                          ></select>
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Service militaire</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Service militaire"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Date naissance</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="date"
+                            class="form-control"
+                            placeholder="nom 2éme langue"
+                          />
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Lieu naissance</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Lieu naissance"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Sexe</label
+                        >
+                        <div class="col-sm-3">
+                          <select
+                            class="form-control"
+                            placeholder="sexe"
+                          ></select>
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Nationalité</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Nationalité"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Type d'identité</label
+                        >
+                        <div class="col-sm-3">
+                          <select
+                            class="form-control"
+                            placeholder="Type d'identité"
+                          ></select>
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >N identité</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="N identité"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Date d'identité</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="date"
+                            class="form-control"
+                            placeholder="nom 2éme langue"
+                          />
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Lieu émission identité</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Lieu émission identité"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Sit.familiale</label
+                        >
+                        <div class="col-sm-3">
+                          <select
+                            type="password"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Sit.familiale"
+                          ></select>
+                        </div>
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Groupe sanguin</label
+                        >
+                        <div class="col-sm-3">
+                          <select
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="prenom 2éme langue"
+                          ></select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div *ngSwitchCase="3">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Niveau</th>
+                      <th scope="col">Libelle</th>
+                      <th scope="col">Etablissement</th>
+                      <th scope="col">Libelle</th>
+                      <th scope="col">Specialite</th>
+                      <th scope="col">Libelle</th>
+                      <th scope="col">Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <td>@mdo</td>
+                      <td>@mdo</td>
+                      <td>@mdo</td>
+                      <td>@mdo</td>
+                    </tr>
+                    <tr>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                      <td>@fat</td>
+                      <td>@fat</td>
+                      <td>@fat</td>
+                      <td>@fat</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div *ngIf="x == '2'">
+          <ul class="nav nav-tabs">
+            <li [ngClass]="{ active: tab == 1 }" (click)="tab = 1">
+              <a class="nav-link"
+                ><button id="ref" class="btn btn-sm">
+                  Recap contrôle paie
+                </button></a
+              >
+            </li>
+            <li [ngClass]="{ active: tab == 2 }" (click)="tab = 2">
+              <a class="nav-link"
+                ><button id="ref" class="btn btn-sm">
+                  Recap comparatif
+                </button></a
+              >
+            </li>
+            <li [ngClass]="{ active: tab == 3 }" (click)="tab = 3">
+              <a class="nav-link"
+                ><button id="ref" class="btn btn-sm">
+                  Journal comparatif
+                </button></a
+              >
+            </li>
+            <li [ngClass]="{ active: tab == 4 }" (click)="tab = 4">
+              <a class="nav-link"
+                ><button id="ref" class="btn btn-sm">
+                  E. Contrôle par rubrique
+                </button></a
+              >
+            </li>
+            <li [ngClass]="{ active: tab == 5 }" (click)="tab = 5">
+              <a class="nav-link"
+                ><button id="ref" class="btn btn-sm">
+                  Etat des retenus
+                </button></a
+              >
+            </li>
+            <li [ngClass]="{ active: tab == 6 }" (click)="tab = 6">
+              <a class="nav-link"
+                ><button id="ref" class="btn btn-sm">
+                  Journal comptable / Rubrique
+                </button></a
+              >
+            </li>
+            <li [ngClass]="{ active: tab == 7 }" (click)="tab = 7">
+              <a class="nav-link"
+                ><button id="ref" class="btn btn-sm">
+                  Journal avance salaire
+                </button></a
+              >
+            </li>
+            <li [ngClass]="{ active: tab == 6 }" (click)="tab = 6">
+              <a class="nav-link"
+                ><button id="ref" class="btn btn-sm">
+                  Journal comptable / compte
+                </button></a
+              >
+            </li>
+            <li [ngClass]="{ active: tab == 6 }" (click)="tab = 6">
+              <a class="nav-link"
+                ><button id="ref" class="btn btn-sm">
+                  Journal de rappel
+                </button></a
+              >
+            </li>
+          </ul>
+          <div [ngSwitch]="tab">
+            <br />
+            <div *ngSwitchCase="1"></div>
+            <div *ngSwitchCase="2"></div>
+            <div *ngSwitchCase="3"></div>
+            <div *ngSwitchCase="4"></div>
+            <div *ngSwitchCase="5">
+              <div class="card">
+                <div class="card-body" id="print-section">
+                  <h6 style="color: #001b85">Etat des retenus</h6>
+
+                  <button
+                    type="button"
+                    class="btn btn-labeled btn-danger"
+                    style="float: right"
+                    printTitle="Print Title"
+                    printSectionId="print-section"
+                    ngxPrint
+                  >
+                    <span class="btn-label"><i class="fa fa-print"> </i></span>
+                    Imprimer
+                  </button>
+                  <!-- <i class="far fa-file-pdf" style="float: right"></i> -->
+
+                  <hr />
+
+                  <table class="demo" id="print-section">
+                    <tbody>
+                      <tr>
+                        <td>Mois</td>
+                        <td>
+                          <input
+                            type="date"
+                            class="form-control"
+                            id="inputEmail3"
+                          />
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>Type de bulletin</td>
+                        <td>
+                          <select
+                            name="bulletin"
+                            id="bulletin"
+                            class="form-select form-select-sm"
+                            aria-label=".form-select-sm example"
+                          >
+                            <option value="none"></option>
+                            <option value="annulation">
+                              Bulletin d'annulation
+                            </option>
+                            <option value="attestation">
+                              Bulletin attestation théorique
+                            </option>
+                            <option value="anterieur">
+                              Bulletin antérieur
+                            </option>
+                            <option value="divers">Bulletin divers</option>
+                            <option value="gratification">
+                              Prime de gratification
+                            </option>
+                            <option value="mois">Bulletin du mois</option>
+                            <option value="rappel">Bulletin Rappel</option>
+                            <option value="theorique">
+                              Bulletin théorique
+                            </option>
+                            <option value="capacite">Capacité</option>
+                            <option value="effort">Prime d'éffort</option>
+                            <option value="carriere">
+                              Prime fin de carrière
+                            </option>
+                            <option value="theorique">Théorique</option>
+                            <option value="envers">Bulletin à l'envers</option>
+                            <option value="solde">Sole de tout compte</option>
+                            <option value="simulation">Simulation</option>
+                          </select>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>Matricule Début</td>
+                        <td>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Matricule début"
+                            style="font-size: 12px"
+                          />
+                        </td>
+                        <td>Matricule Fin</td>
+                        <td>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Matricule début"
+                            style="font-size: 12px"
+                          />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Choix</td>
+                        <td>
+                          <select
+                            name="bulletin"
+                            id="bulletin"
+                            class="form-select form-select-sm"
+                            aria-label=".form-select-sm example"
+                          >
+                            <option value="none"></option>
+                            <option value="afiarabe">Retenu cession</option>
+                            <option value="paie">Retenu mensuelle pert</option>
+                            <option value="matricielle">
+                              Retenu mensuelle / salaire
+                            </option>
+                          </select>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                    </tbody>
+                    <!-- <div class="form-group row">
+                      <form (submit)="printerReportt()">
+                        <div class="col-sm-10">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Matricule début"
+                            style="font-size: 12px"
+                          />
+                          <button type="submit" class="btn btn-primary btn-sm">
+                            <i class="fas fa-tools"> Préparer</i>
+                          </button>
+                        </div>
+                      </form>
+                    </div> -->
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div *ngSwitchCase="6"></div>
+            <div *ngSwitchCase="7"></div>
+            <div *ngSwitchCase="8"></div>
+            <div *ngSwitchCase="9"></div>
+          </div>
+        </div>
+        <div *ngIf="x == '3'">
+          <ul class="nav nav-tabs">
+            <li [ngClass]="{ active: tab == 1 }" (click)="tab = 1">
+              <a class="nav-link"
+                ><button id="ref" class="btn btn-sm">
+                  Journal paie global
+                </button></a
+              >
+            </li>
+            <li [ngClass]="{ active: tab == 2 }" (click)="tab = 2">
+              <a class="nav-link"
+                ><button id="ref" class="btn btn-sm">
+                  Journal paie parametrè
+                </button></a
+              >
+            </li>
+            <li [ngClass]="{ active: tab == 3 }" (click)="tab = 3">
+              <a class="nav-link"
+                ><button id="ref" class="btn btn-sm">
+                  Journal paie par statut
+                </button>
+              </a>
+            </li>
+            <li [ngClass]="{ active: tab == 4 }" (click)="tab = 4">
+              <a class="nav-link"
+                ><button id="ref" class="btn btn-sm">
+                  Journal paie par position
+                </button></a
+              >
+            </li>
+            <li [ngClass]="{ active: tab == 5 }" (click)="tab = 5">
+              <a class="nav-link"
+                ><button id="ref" class="btn btn-sm">
+                  Récap de paie globale
+                </button></a
+              >
+            </li>
+            <li [ngClass]="{ active: tab == 6 }" (click)="tab = 6">
+              <a class="nav-link"
+                ><button id="ref" class="btn btn-sm">
+                  Edition bulletin de paie
+                </button></a
+              >
+            </li>
+            <li [ngClass]="{ active: tab == 7 }" (click)="tab = 7">
+              <a class="nav-link"
+                ><button id="ref" class="btn btn-sm">
+                  Virement / Emergement
+                </button></a
+              >
+            </li>
+            <li [ngClass]="{ active: tab == 8 }" (click)="tab = 8">
+              <a class="nav-link"
+                ><button id="ref" class="btn btn-sm">
+                  Fiche historique
+                </button></a
+              >
+            </li>
+            <li [ngClass]="{ active: tab == 9 }" (click)="tab = 9">
+              <a class="nav-link"
+                ><button id="ref" class="btn btn-sm">
+                  Etat récapitulatif
+                </button></a
+              >
+            </li>
+            <li [ngClass]="{ active: tab == 10 }" (click)="tab = 10">
+              <a class="nav-link"
+                ><button id="ref" class="btn btn-sm">Provision IDR</button></a
+              >
+            </li>
+          </ul>
+          <div [ngSwitch]="tab">
+            <br />
+            <!-- <div *ngSwitchCase="1">
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Date d'embauche</label
+                >
+                <div class="col-sm-3">
+                  <input
+                    type="date"
+                    class="form-control"
+                    placeholder="nom 2éme langue"
+                  />
+                </div>
+
+                &nbsp; &nbsp;
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Date d'entrée adminisration</label
+                >
+                <div class="col-sm-3">
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="inputPassword3"
+                    placeholder="Lieu naissance"
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Date Titularisation</label
+                >
+                <div class="col-sm-3">
+                  <input
+                    type="date"
+                    class="form-control"
+                    placeholder="Date Titularisation"
+                  />
+                </div>
+
+                &nbsp; &nbsp;
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Contrat Fidelité</label
+                >
+                <div class="col-sm-3">
+                  <select
+                    type="date"
+                    class="form-control"
+                    id="inputPassword3"
+                    placeholder="Lieu naissance"
+                  ></select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Date Fin Fidelité</label
+                >
+                <div class="col-sm-3">
+                  <input
+                    type="date"
+                    class="form-control"
+                    placeholder="Date Titularisation"
+                  />
+                </div>
+              </div>
+            </div> -->
+            <!-- <div *ngSwitchCase="2">
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Regime travail</label
+                >
+                <div class="col-sm-3">
+                  <select
+                    type="date"
+                    class="form-control"
+                    placeholder="Date Titularisation"
+                  ></select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Debut cycle</label
+                >
+                <div class="col-sm-3">
+                  <input
+                    type="date"
+                    class="form-control"
+                    placeholder="Date Titularisation"
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Code Regime</label
+                >
+                <div class="col-sm-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Date Titularisation"
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Regime conge</label
+                >
+                <div class="col-sm-3">
+                  <select
+                    type="date"
+                    class="form-control"
+                    placeholder="Date Titularisation"
+                  ></select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Code Regime</label
+                >
+                <div class="col-sm-3">
+                  <select
+                    type="text"
+                    class="form-control"
+                    placeholder="Date Titularisation"
+                  ></select>
+                </div>
+              </div>
+              <div *ngSwitchCase="3">Content 3</div>
+              <div *ngSwitchDefault>Default</div>
+            </div> -->
+            <div *ngSwitchCase="6">
+              <div class="card">
+                <div class="card-body">
+                  <h6 style="color: #001b85">Edition Bulletin De Paie</h6>
+                  <button
+                    type="button"
+                    class="btn btn-labeled btn-danger"
+                    style="float: right"
+                    printTitle="Print Title"
+                    printSectionId="print-section"
+                    ngxPrint
+                  >
+                    <span class="btn-label"><i class="fa fa-print"> </i></span>
+                    Imprimer
+                  </button>
+                  <hr />
+                    <form [formGroup]="formDocument"  #Bullform="ngForm">
+                      <div class="form-group row">
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Type Belletin"
+                            style="font-size: 12px"
+                            formControlName="cod_typ_bul"
+                            required
+                          />
+                        </div>
+
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Format date : mm/"
+                            style="font-size: 12px"
+                            formControlName="dateBul"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <!-- <div class="col-sm-3">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="inputPassword3"
+                              placeholder="code soc"
+                              style="font-size: 12px"
+                              formControlName="mat_pers"
+                            />
+                          </div>
+  
+                          <div class="col-sm-3">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="inputPassword3"
+                              placeholder="mat pers"
+                              style="font-size: 12px"
+                              formControlName="cod_soc"
+                            />
+                          </div> --><br>
+                          <button type="submit" class="btn btn-primary btn-sm" (click)="addHotel()"  [disabled]="Bullform.invalid">
+                            <i class="fas fa-search"> Chercher</i>
+                          </button>
+                          <hr>
+                          
+                        </div>
+                      </div>
+                    </form>
+                    <br />
+                    <form>
+                      <div class="form-group">
+                    <table class="container">
+                      <tr>
+                        <td>Matricule</td>
+                        <td><input type="text" class="form-control input-sm" [value]="listInfo.mat_pers"/></td>
+                        <td>Nom & Prénom</td>
+                        <td><input type="text" class="form-control input-sm" [value]="listInfo.nom_pers"/></td>
+                        <td>Enfant All. familale</td>
+                        <td><input type="text" class="form-control input-sm" [value]="listInfo.charg_all"/></td>
+                        <td>Nombre enfant</td>
+                        <td><input type="text" class="form-control input-sm" [value]="listInfo.nbr_enf"/></td>
+                      </tr>
+                      <tr>
+                        <td>Code Service</td>
+                        <td><input type="text" [value]="listInfo.cod_serv" class="form-control input-sm"/></td>
+                        <td>Service</td>
+                        <td><input type="text" [value]="listInfo.lib_serv" class="form-control input-sm"/></td>
+                        <td>Enfants à charge</td>
+                        <td><input type="text" [value]="listInfo.charg_enf" class="form-control input-sm"/></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>Code Poste</td>
+                        <td><input type="text" class="form-control input-sm"  [value]="listInfo.adm_tech"/></td>
+                        <td>Poste</td>
+                        <td><input type="text"  class="form-control input-sm"  [value]="listInfo.lib_adm_tech"/></td>
+                        <td>Echelon</td>
+                        <td><input type="text" class="form-control input-sm"  [value]="listInfo.cod_ech" /></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>Classe</td>
+                        <td><input type="text" class="form-control input-sm"  [value]="listInfo.cod_cat"/></td>
+                        <td>Section</td>
+                        <td><input type="text" class="form-control input-sm"  [value]="listInfo.cod_grad"/></td>
+                        <td>Code situation familale</td>
+                        <td><input type="text" class="form-control input-sm"  [value]="listInfo.cod_sit" /></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </table>
+
+                  
+                    </div>
+                    
+
+
+                    <div style="width: 100%; padding: 20px">
+                      <div style="display: inline-block; width: 100%; margin-top: 10px; margin-bottom: 10px">
+                      
+                  </div>
+                  <ag-grid-angular 
+                      style="width: 100%; height: 500px;" 
+                      class="ag-theme-balham"
+                      [rowData]="rowData" 
+                      [columnDefs]="columnDefs"
+                      [defaultColDef]="defaultColDef"
+                      [pagination]="true"
+                      [modules]="modules"
+                  
+                  
+                      >
+                  </ag-grid-angular></div>
+
+
+                  </form>
+
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

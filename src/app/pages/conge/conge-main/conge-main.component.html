@@ -1,0 +1,646 @@
+<div class="container-fluid">
+  <h5 style="float: right">
+    Votre solde de congé est : <span style="color: red">23 Jours </span>
+  </h5>
+
+  <ul class="nav nav-tabs">
+    <li class="nav-item" [ngClass]="{ active: tab == 1 }" (click)="tab = 1">
+      <a class="nav-link"><button id="ref">Annuel</button></a>
+    </li>
+    <li class="nav-item" [ngClass]="{ active: tab == 2 }" (click)="tab = 2">
+      <a class="nav-link"><button id="ref">Maladie</button></a>
+    </li>
+    <li class="nav-item" [ngClass]="{ active: tab == 3 }" (click)="tab = 3">
+      <a class="nav-link"><button id="ref">Exceptionnel</button></a>
+    </li>
+    <li class="nav-item" [ngClass]="{ active: tab == 3 }" (click)="tab = 4">
+      <a class="nav-link"><button id="ref">Autre motifs</button></a>
+    </li>
+    <li class="nav-item" [ngClass]="{ active: tab == 3 }" (click)="tab = 5">
+      <a class="nav-link"><button id="ref">Confondus</button></a>
+    </li>
+  </ul>
+  <div [ngSwitch]="tab">
+    <div *ngSwitchCase="1">
+      <div *ngSwitchCase="1">
+        <table class="table table-hover table-sm">
+          <thead>
+            <tr>
+              <th scope="col">
+                Année
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="annee"
+                      placeholder="Année"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Date Début
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="debut"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Date fin
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="fin"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Date rétour prévue
+                <div class="form-group row">
+                  <div class="col-sm-6">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="dateprevu"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Date rétour
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="retour"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Nbre jour cal
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="jour"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Nbre jour
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nb"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Cummul.Ret
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="cumm"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">Etat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">2013</th>
+              <td>24/06/2014</td>
+              <td>02/07/2014</td>
+              <td>03/07/2014</td>
+              <td>03/07/2014</td>
+              <td>9</td>
+              <td>7</td>
+              <td></td>
+              <td>
+                <select
+                name="bulletin"
+                id="bulletin"
+                class="form-select form-select-sm"
+                aria-label=".form-select-sm example"
+              >
+                <option value="none">Validé</option>
+                <option value="paie">Non Validé</option>
+              </select>
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">2013</th>
+              <td>24/06/2014</td>
+              <td>02/07/2014</td>
+              <td>03/07/2014</td>
+              <td>03/07/2014</td>
+              <td>9</td>
+              <td>7</td>
+              <td></td>
+              <td>
+                <select
+                name="bulletin"
+                id="bulletin"
+                class="form-select form-select-sm"
+                aria-label=".form-select-sm example"
+              >
+                <option value="none">Validé</option>
+                <option value="paie">Non Validé</option>
+              </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div *ngSwitchCase="2">
+      <div *ngSwitchCase="2">
+        <table class="table table-hover table-sm">
+          <thead>
+            <tr>
+              <th scope="col">
+                Année
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="annee"
+                      placeholder="Année"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Date Début
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="debut"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Date fin
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="fin"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Date rétour prévue
+                <div class="form-group row">
+                  <div class="col-sm-6">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="dateprevu"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Date rétour
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="retour"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Nbre jour cal
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="jour"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Nbre jour
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nb"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Cummul.Ret
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="cumm"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">Etat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">2018</th>
+              <td>24/06/2000</td>
+              <td>02/07/2009</td>
+              <td>03/07/2000</td>
+              <td>03/07/2011</td>
+              <td>11</td>
+              <td>12</td>
+              <td></td>
+              <td>
+                <div class="dropdown mr-1">
+                  <button
+                    type="button"
+                    class="btn btn-secondary dropdown-toggle btn-sm"
+                    id="dropdownMenuOffset"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    data-offset="10,20"
+                  >
+                    Non Validé
+                  </button>
+                  <div
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuOffset"
+                  >
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div *ngSwitchCase="3">
+      <div *ngSwitchCase="3">
+        <table class="table table-hover table-sm">
+          <thead>
+            <tr>
+              <th scope="col">
+                Année
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="annee"
+                      placeholder="Année"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Date Début
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="debut"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Date fin
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="fin"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Date rétour prévue
+                <div class="form-group row">
+                  <div class="col-sm-6">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="dateprevu"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Date rétour
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="retour"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Nbre jour cal
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="jour"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Nbre jour
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nb"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">
+                Cummul.Ret
+                <div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="cumm"
+                      placeholder="Chercher"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">Etat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">2018</th>
+              <td>24/06/2000</td>
+              <td>02/07/2009</td>
+              <td>03/07/2000</td>
+              <td>03/07/2011</td>
+              <td>11</td>
+              <td>12</td>
+              <td></td>
+              <td>
+                <div class="dropdown mr-1">
+                  <button
+                    type="button"
+                    class="btn btn-secondary dropdown-toggle btn-sm"
+                    id="dropdownMenuOffset"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    data-offset="10,20"
+                  >
+                    Non Validé
+                  </button>
+                  <div
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuOffset"
+                  >
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2018</th>
+              <td>24/06/2000</td>
+              <td>02/07/2009</td>
+              <td>03/07/2000</td>
+              <td>03/07/2011</td>
+              <td>11</td>
+              <td>12</td>
+              <td></td>
+              <td>
+                <div class="dropdown mr-1">
+                  <button
+                    type="button"
+                    class="btn btn-secondary dropdown-toggle btn-sm"
+                    id="dropdownMenuOffset"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    data-offset="10,20"
+                  >
+                    Non Validé
+                  </button>
+                  <div
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuOffset"
+                  >
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2018</th>
+              <td>24/06/2000</td>
+              <td>02/07/2009</td>
+              <td>03/07/2000</td>
+              <td>03/07/2011</td>
+              <td>11</td>
+              <td>12</td>
+              <td></td>
+              <td>
+                <div class="dropdown mr-1">
+                  <button
+                    type="button"
+                    class="btn btn-secondary dropdown-toggle btn-sm"
+                    id="dropdownMenuOffset"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    data-offset="10,20"
+                  >
+                    Non Validé
+                  </button>
+                  <div
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuOffset"
+                  >
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div *ngSwitchCase="4">
+      <div *ngSwitchCase="4">
+        <table class="table table-hover table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Année</th>
+              <th scope="col">Motif</th>
+              <th scope="col">Date Dcng</th>
+              <th scope="col">Date début</th>
+              <th scope="col">Date Fin</th>
+              <th scope="col">Nbre jour cal</th>
+              <th scope="col">Nbre jour</th>
+              <th scope="col">Etat</th>
+            </tr>
+          </thead>
+          <tr>
+            <th scope="row">2018</th>
+            <td>24/06/2000</td>
+            <td>02/07/2009</td>
+            <td>03/07/2000</td>
+            <td>03/07/2011</td>
+            <td>11</td>
+            <td>122</td>
+            <td>
+              <div class="dropdown mr-1">
+                <button
+                  type="button"
+                  class="btn btn-secondary dropdown-toggle btn-sm"
+                  id="dropdownMenuOffset"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  data-offset="10,20"
+                >
+                  Non Validé
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div *ngSwitchCase="5">
+      <div *ngSwitchCase="5">
+        <table class="table table-hover table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Année</th>
+              <th scope="col">Motif</th>
+              <th scope="col">Date Dcng</th>
+              <th scope="col">Date début</th>
+              <th scope="col">Date Fin</th>
+              <th scope="col">Nbre jour cal</th>
+              <th scope="col">Nbre jour</th>
+              <th scope="col">Etat</th>
+            </tr>
+          </thead>
+          <tr>
+            <th scope="row">2018</th>
+            <td>24/06/2000</td>
+            <td>02/07/2009</td>
+            <td>03/07/2000</td>
+            <td>03/07/2011</td>
+            <td>11</td>
+            <td>122</td>
+            <td>
+              <div class="dropdown mr-1">
+                <button
+                  type="button"
+                  class="btn btn-secondary dropdown-toggle btn-sm"
+                  id="dropdownMenuOffset"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  data-offset="10,20"
+                >
+                  Non Validé
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div *ngSwitchDefault>Default</div>
+  </div>
+</div>

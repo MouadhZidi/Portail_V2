@@ -1,0 +1,337 @@
+<!--Main Navigation-->
+<header>
+  <!-- Sidebar -->
+  <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-dark " >
+    <div class="position-sticky ">
+         <nav class="mt-2">
+            <span class="brand-text font-weight-light" style="color: orange;text-shadow: 2; font-size: xx-large;"></span>
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+               <br><br>
+                <!-- <li class="nav-header">Menu</li> -->
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/home">
+                  <mat-icon>dashboard</mat-icon>
+                        <p>
+                          &nbsp; Dashboard
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" routerLink="/conge">
+                         <mat-icon>assignment</mat-icon>
+                        <p>
+                          &nbsp; Conge
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/bulletin_paie">
+                        <mat-icon>table_view</mat-icon>
+                        <p>
+                          &nbsp; Paie
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item"   >
+                    <a class="nav-link" routerLink="/employee">
+                        <mat-icon>supervised_user_circle</mat-icon>
+                        <p>
+                          &nbsp; Employée
+                        </p>
+                    </a>
+                </li>
+               
+                <li class="nav-item" >
+                    <a class="nav-link" routerLink="/demande">
+                        <mat-icon>bookmark_add</mat-icon>
+
+                        <p>
+                           &nbsp; Demande
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" routerLink="/consltopp">
+                        <i class="fa fa-object-group" aria-hidden="true"></i>
+                        <p>
+                           &nbsp; Consultation d'opposition
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" routerLink="/conslbsoin">
+                        <mat-icon>bookmark_add</mat-icon>
+
+                        <p>
+                           &nbsp; Consultation Bulletin de soin
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" routerLink="/pravance">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <p>
+                           &nbsp; Consultation pret et avance
+                        </p>
+                    </a>
+                </li>
+               
+               
+             
+                
+
+                <li class="nav-item" >
+                    <a class="nav-link" (click)="logout()">
+                        <i class="fa fa-object-group" aria-hidden="true" style="color: red;"></i>
+                        <p>
+                          &nbsp; Déconnexion
+                        </p>
+                    </a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" (click)="logout()">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        <p>
+                          &nbsp;Déconnexion
+                        </p>
+                      </a>
+                  </li> -->
+                  
+            </ul>
+        </nav>
+    </div>
+  </nav>
+  <!-- Sidebar -->
+
+  <!-- Navbar -->
+  <nav
+    id="main-navbar"
+    class="navbar navbar-expand-lg navbar-light bg-dark fixed-top"
+  >
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#sidebarMenu"
+        aria-controls="sidebarMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        data-bs-toggle="dropdown"
+
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Brand -->
+      <a class="navbar-brand">
+        <img
+          src="../../../assets/images/logo.png"
+          height="40"
+          alt="MDB Logo"
+          loading="lazy"
+        />
+      </a>
+      <!-- Search form -->
+      <form class="d-none d-md-flex input-group w-auto my-auto">
+        <input
+          autocomplete="off"
+          type="search"
+          class="form-control rounded"
+          placeholder='Search (ctrl + "/" to focus)'
+          style="min-width: 225px"
+        />
+        <span class="input-group-text border-0"
+          ><i class="fas fa-search"></i
+        ></span>
+      </form>
+
+      <!-- Right links -->
+      <ul class="navbar-nav ms-auto d-flex flex-row">
+        <!-- Notification dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+          >
+            <i class="fas fa-bell"></i>
+            <span class="badge rounded-pill badge-notification bg-danger"
+              >1</span
+            >
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdownMenuLink"
+
+          >
+            <li>
+              <a class="dropdown-item">Some news</a>
+            </li>
+            <li>
+              <a class="dropdown-item">Another news</a>
+            </li>
+            <li>
+              <a class="dropdown-item">Something else here</a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Icon -->
+        <li class="nav-item">
+          <a class="nav-link me-3 me-lg-0">
+            <i class="fas fa-fill-drip"></i>
+          </a>
+        </li>
+
+       <!--  <li class="nav-item me-3 me-lg-0">
+          <a class="nav-link">
+            <i class="fab fa-github"></i>
+          </a>
+        </li> -->
+
+        <!-- Icon dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
+            id="navbarDropdown"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+          >
+            <i class="united kingdom flag m-0"></i>
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdown"
+          >
+            <li>
+              <a class="dropdown-item"
+                ><i class="united kingdom flag"></i>English
+                <i class="fa fa-check text-success ms-2"></i
+              ></a>
+            </li>
+            <!-- <li>
+              <hr class="dropdown-divider" />
+
+              <a
+                class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
+                id="navbarDropdown"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+
+
+
+              >
+                <i class="flag-united-kingdom flag m-0"></i>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdown"
+
+              >
+                <li>
+                  <a class="dropdown-item"
+                    ><i class="flag-united-kingdom flag"></i>English
+                    <i class="fa fa-check text-success ms-2"></i
+                  ></a>
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    ><i class="flag-poland flag"></i>Polski</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    ><i class="flag-china flag"></i>中文</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    ><i class="flag-japan flag"></i>日本語</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    ><i class="flag-germany flag"></i>Deutsch</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    ><i class="flag-france flag"></i>Français</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    ><i class="flag-spain flag"></i>Español</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    ><i class="flag-russia flag"></i>Русский</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item"
+                    ><i class="flag-portugal flag"></i>Português</a
+                  >
+                </li>
+              </ul>
+            </li> -->
+          </ul>
+        </li>
+       
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+          >
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
+              class="rounded-circle"
+              height="22"
+              alt="Avatar"
+              loading="lazy"
+            />
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdownMenuLink"
+          >
+            <li>
+              <a class="dropdown-item">My profile</a>
+            </li>
+            <li>
+              <a class="dropdown-item">Settings</a>
+            </li>
+            <li>
+              <a class="dropdown-item" (click)="logout()">Logout</a>
+
+
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+
+</header>
+
+<main style="margin-top: 58px">
+  <div class="container pt-4"></div>
+</main>
+

@@ -1,0 +1,58 @@
+.container-fluid{
+  padding-right: 50px;
+}
+
+#inputPassword4{
+  margin-left: 50%;
+}
+#mm{
+
+  padding: auto;
+  align-items: -webkit-center;
+  text-align: -webkit-center;
+  margin-left: 25%;
+
+
+}
+.centrage{ display: block;
+
+text-align: center;
+
+}
+#ref {
+  background: #e9ecef;
+  border: 1px solid #e9ecef;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size:12px;
+  font-weight: bold;
+
+}
+
+#ref:focus {
+  background: #ffffff;
+  outline: none;
+  -webkit-box-shadow: inset 0px 0px 5px #e9ecef;
+  -moz-box-shadow: inset 0px 0px 5px #e9ecef;
+  box-shadow: inset 0px 0px 5px #e9ecef;
+}
+#ref2 {
+  background: #e9ecef;
+  border: 1px solid #e9ecef;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size:12px;
+  font-weight: bold;
+
+}
+
+#ref2:focus {
+  background: #ffffff;
+  outline: none;
+  -webkit-box-shadow: inset 0px 0px 5px #e9ecef;
+  -moz-box-shadow: inset 0px 0px 5px #e9ecef;
+  box-shadow: inset 0px 0px 5px #e9ecef;
+}
+

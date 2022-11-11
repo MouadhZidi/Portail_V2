@@ -1,0 +1,479 @@
+<app-menu></app-menu>
+<div class="container-fluid">
+  <div class="row">
+    <!-- <div class="col-md-2"></div> -->
+    <div class="col-md-12" style="font-size: 0.8em; width: 100%;padding-left: 13.5%;">
+      <div class="card-body">
+        <div class="card">
+          <div class="card-body">
+            <div class="centopp">
+              <table style="border: none">
+                <tr>
+                  <td>
+                    <h4 style="color: #001b85">
+                      Consultation d'opposition et saisie Arrets
+                    </h4>
+                  </td>
+                  <td>
+                    <mat-icon
+                      type="button"
+                      class="btnrecherche"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                      tabindex="1"
+                    >
+                      search</mat-icon
+                    >
+                  </td>
+                </tr>
+              </table>
+
+              <hr />
+
+              <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Consultation d'opposition
+                      </h1>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+
+                    <div class="modal-body">
+                      <div class="form-group">
+                        <p style="">Matricule :</p>
+                        <input type="text" name="matricule" />
+                      </div>
+                      <br />
+                      <div class="form-group">
+                        <p style="">Prêt :</p>
+                        <input type="text" name="matricule" />
+                      </div>
+                      <button
+                        type="button"
+                        class="btn btn-outline-primary btnrecherche"
+                      >
+                        Recherche
+                      </button>
+                      <br />
+
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">Matricule</th>
+                            <th scope="col">Nom & Prénom</th>
+                            <th scope="col">Code Prêt</th>
+                            <th scope="col">Libellé</th>
+                            <th scope="col">Organisme</th>
+                            <th scope="col">Libellé</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr (click)="anotherFunction($event)">
+                            <th scope="row">opps.id</th>
+                            <td>opps.nom</td>
+                            <td>opps.matricule</td>
+                            <td>opps.code</td>
+                            <td>opps.libelleC</td>
+                            <td>opps.organisme</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Fermer
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cadre-table-scroll">
+                <table class="table table-borderless" style="width: 100%">
+                  <tbody>
+                    <tr>
+                      <td scope="row">Matricule</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                      <td scope="row">Nom & Prénom</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                      <td scope="row">Date d'embauche</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Organisme</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                      <td scope="row">Libellé</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Groupe</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                      <td scope="row">Type Prêt</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                      <td scope="row">Libellé</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Date demande</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                      <td scope="row">Montant demandé</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                      <td scope="row">Montant accordé</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Mois début</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                      <td scope="row">Membre mentualités payées</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                      <td scope="row">Mois fin</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Date saisie</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                      <td scope="row">Rembouressement mensuel</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                      <td scope="row">Code Prêt</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Dérniere retenue</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                      <td scope="row">Etat Prêt</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                      <td scope="row">Ref session</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td scope="row">Montant remboursé</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder=""
+                          style="font-size: 12px"
+                        />
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <br />
+              <br />
+              <table class="table align-middle mb-0 bg-white">
+                <thead class="bg-light">
+                  <tr>
+                    <th>N Lig</th>
+                    <th>Type Bulletin</th>
+                    <th>Libellé</th>
+                    <th>Libellé Acte</th>
+                    <th>Date tranche réel</th>
+                    <th>Retenue</th>
+                    <th>Rest cap pret</th>
+                    <th>Validé</th>
+                    <th>Régler</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                          <p class="">John Doe</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="fw-normal mb-1">Software engineer</p>
+                    </td>
+                    <td>
+                      <span class="badge badge-success rounded-pill d-inline"
+                        >Active</span
+                      >
+                    </td>
+                    <td>Senior</td>
+                    <td></td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                          <p class="">John Doe</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="fw-normal mb-1">Software engineer</p>
+                    </td>
+                    <td>
+                      <span class="badge badge-success rounded-pill d-inline"
+                        >Active</span
+                      >
+                    </td>
+                    <td>Senior</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                          <p class="">Alex Ray</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="fw-normal mb-1">Consultant</p>
+                    </td>
+                    <td>
+                      <span class="badge badge-primary rounded-pill d-inline"
+                        >Onboarding</span
+                      >
+                    </td>
+                    <td>Junior</td>
+                    <td></td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                          <p class="">John Doe</p>
+                        </div>
+                      </div>
+                    </td>
+
+                    <td></td>
+                    <td>
+                      <p class="fw-normal mb-1">Software engineer</p>
+                    </td>
+                    <td>
+                      <span class="badge badge-success rounded-pill d-inline"
+                        >Active</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                          <p class="">Kate Hunington</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="fw-normal mb-1">Designer</p>
+                    </td>
+                    <td>
+                      <span class="badge badge-warning rounded-pill d-inline"
+                        >Awaiting</span
+                      >
+                    </td>
+                    <td>Senior</td>
+                    <td></td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                          <p class="">John Doe</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="fw-normal mb-1">Software engineer</p>
+                    </td>
+                    <td>
+                      <span class="badge badge-success rounded-pill d-inline"
+                        >Active</span
+                      >
+                    </td>
+                    <td>Senior</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

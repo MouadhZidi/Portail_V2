@@ -1,0 +1,1997 @@
+<div class="container-fluid">
+  <app-menu></app-menu>
+  <div class="row">
+    <!-- <div class="col-md-2"></div> -->
+    <div class="col-md-12" style="padding-left: 13.5%;width: 100%;">
+      <div class="card-body">
+        <div class="card">
+          <div class="card-body">
+      <h4 style="color: #001b85">Consultation employee</h4>
+      <hr>
+
+      <div class="card-body">
+        <div class="centrage">
+          <img class="rounded-circle z-depth-2" alt="100x100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkRZow5anceAgh6-wEY9u21H8EUm-EP26LjQ&usqp=CAU"
+          data-holder-rendered="true"></div><br><br>
+        <div class="card">
+          <div class="card-body">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputPassword3"
+                    placeholder="Matricule"
+                    [value]="mat"
+                    style="font-size: 12px;"
+                  />
+                </div>
+
+                <div class="col-sm-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputPassword3"
+                  [value]="getbymatcod.nom_pers"
+                    placeholder="Nom"
+                    style="font-size: 12px;"
+                  />
+                </div>
+                <div class="col-sm-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputPassword3"
+                    [value]="getbymatcod.pren_pers"
+                    placeholder="Prénom"
+                    style="font-size: 12px;"
+                  />
+                </div>
+                <div class="col-sm-3">
+                  <select
+                    type="text"
+                    class="form-control"
+                    id="inputPassword3"
+                    placeholder="Etat paie"
+                    style="font-size: 12px;"
+                  >
+                    <option>{{etat}}</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <hr />
+
+        <div class="form-check form-check-inline">
+          <input  [(ngModel)]="x"class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="1">
+          <label class="form-check-label" for="inlineRadio1">Information personnelles</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input  [(ngModel)]="x" class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="2">
+          <label class="form-check-label" for="inlineRadio2">Information professionnelles</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input [(ngModel)]="x" class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio3" value="3" >
+          <label class="form-check-label" for="inlineRadio3">Information sociales</label>
+        </div>
+
+
+        <div *ngIf="x == '1'">
+          <ul class="nav nav-tabs">
+            <li [ngClass]="{ active: tab == 1 }" (click)="tab = 1">
+              <a class="nav-link"
+              ><button id="ref" class="btn btn-sm">
+                Identité
+              </button></a
+            >
+            </li>
+            <li [ngClass]="{ active: tab == 2 }" (click)="tab = 2">
+              <a  class="nav-link"><button id="ref" class="btn btn-sm">
+                Adresse&Contact
+              </button></a
+            >
+            </li>
+            <li [ngClass]="{ active: tab == 3 }" (click)="tab = 3">
+              <a  class="nav-link"><button id="ref" class="btn btn-sm">
+Niveau d'instruction              </button></a
+            >
+            </li>
+          </ul>
+          <br />
+          <div>
+            <div [ngSwitch]="tab">
+              <div *ngSwitchCase="1">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="form-group row">
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Nom 2éme langue</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                          [value]="getbymatcod.nom_pers_a"
+                            type="text"
+                            class="form-control"
+                            placeholder="Nom 2éme langue"
+                            style="font-size: 12px;"
+                          />
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Prénom 2éme langue</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            [value]="getbymatcod.pren_pers_a"
+                            id="inputPassword3"
+                            placeholder="Prénom 2éme langue"
+                            style="font-size: 12px;"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Presum Nais</label
+                        >
+                        <div  *ngIf="getbymatcod.presum_nais=='O'" class="col-sm-3">
+                          <input
+                          value="Oui"
+                            type="text"
+                            class="form-control"
+                            placeholder="Presum Nais"
+                            style="font-size: 12px;"
+                          >
+                        </div>
+                        <div  *ngIf="getbymatcod.presum_nais=='N'" class="col-sm-3">
+                          <input
+                          value="Non"
+                            type="text"
+                            class="form-control"
+                            placeholder="Presum Nais"
+                            style="font-size: 12px;"
+                          >
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Service militaire</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                          [value]="getbymatcod.mil"
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Service militaire"
+                            style="font-size: 12px;"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Date naissance</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            [value]="getbymatcod.dat_nais"
+                            class="form-control"
+                            placeholder="nom 2éme langue"
+                            style="font-size: 12px;"
+                          />
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Lieu naissance</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            [value]="getbymatcod.lieu_nais"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Lieu naissance"
+                            style="font-size: 12px;"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+                      <div  class="form-group row">
+                        <label
+                        
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Sexe</label
+                        >
+                        <div *ngIf="getbymatcod.sexe=='M'" class="col-sm-3">
+                          <input
+                          type="text"
+                          value="Masculin"
+                            class="form-control"
+                            placeholder="Sexe"
+                            style="font-size: 12px;"
+                          >
+                        </div>
+                        <div *ngIf="getbymatcod.sexe=='F'" class="col-sm-3">
+                          <input
+                          type="text"
+                          value="Feminin"
+                            class="form-control"
+                            placeholder="Sexe"
+                            style="font-size: 12px;"
+                          >
+                        </div>
+                        
+                         
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Nationalité</label
+                        >
+                        <div class="col-sm-3">
+                          <input 
+                          [value]="nat"
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Nationalité"
+                            style="font-size: 12px;"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Type d'identité</label
+                        >
+                        <div class="col-sm-3">
+                          <select
+                            class="form-control"
+                            placeholder="Type d'identité"
+                            style="font-size: 12px;"
+                          ></select>
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >N identité</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            [value]="getbymatcod.cin"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="N identité"
+                            style="font-size: 12px;"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Date d'identité</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                          [value]="getbymatcod.dat_cin"
+                            type="text"
+                            class="form-control"
+                            placeholder="Nom 2éme langue"
+                            style="font-size: 12px;"
+                          />
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Lieu émission identité</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                          [value]="getbymatcod.lie_emi_cin"
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Lieu émission identité"
+                            style="font-size: 12px;"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Sit.familiale</label
+                        >
+                        <div *ngIf="getbymatcod.cod_sit=='M'" class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Sit.familiale"
+                            style="font-size: 12px;"
+                            value="Marié"
+                          >
+                        </div>
+                        <div *ngIf="getbymatcod.cod_sit=='C'" class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Sit.familiale"
+                            style="font-size: 12px;"
+                            value="Celebataire"
+                          >
+                        </div>
+                        <div *ngIf="getbymatcod.cod_sit=='D'" class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Sit.familiale"
+                            style="font-size: 12px;"
+                            value="Divorcé"
+                          >
+                        </div>
+                        <div *ngIf="getbymatcod.cod_sit=='V'" class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Sit.familiale"
+                            style="font-size: 12px;"
+                            value="Veuf"
+                          >
+                        </div>
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Groupe sanguin</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                          [value]="getbymatcod.grp_sang"
+                            class="form-control"
+                            id="sanguin"
+                            type="text"
+                            placeholder="Prenom 2éme langue"
+                            style="font-size: 12px;"
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div *ngSwitchCase="2">
+                <ul class="nav nav-tabs">
+                  <li [ngClass]="{active: tab2==1}" (click)="tab2=1"><a   class="nav-link" ><button id="ref2" class="btn-btn sm">Adresse actuel </button> </a></li>
+                  <li [ngClass]="{active: tab2==2}" (click)="tab2=2"><a  class="nav-link" ><button id="ref2" class="btn-btn sm">Contact</button></a></li>
+                  <li [ngClass]="{active: tab2==3}" (click)="tab2=3"><a  class="nav-link"><button id="ref2" class="btn-btn sm">Adresse non Courantes</button></a></li>
+                </ul>
+                <div [ngSwitch]="tab2">
+                  <div *ngSwitchCase="1"><div class="card">
+                    <div class="card-body">
+                      <form>
+                        <table>
+                            <tr><td>Rue</td>
+                                 <td>
+                                     <input [value]="adrpersbycodeandmat.rue"  class="form-control" type="text" name="val000"/>
+                                 </td>
+                                 <td ></td>
+                                 <td>
+
+                                 </td><td>Rue 2éme langue</td>
+                                 <td>
+                                     <input [value]="adrpersbycodeandmat.rue_a"  class="form-control" type="text" name="val000"/>
+                                 </td>
+                                </tr>
+                                <tr><td>Gouvernorat</td>
+                                  <td>
+                                      <input [value]="adrpersbycodeandmat.cod_gouv" class="form-control" type="text" name="val000"/>
+                                  </td>
+                                  <td >  <input [value]="adrpersbycodeandmat.libGouv"  class="form-control" type="text" name="val000"/> </td>
+                                  <td>
+
+                                  </td><td></td>
+                                  <td>
+
+                                  </td>
+                                 </tr>  <tr><td>Poste</td>
+                                  <td>
+                                      <input [value]="getbymatcod.cod_affect"  class="form-control" type="text" name="val000"/>
+                                  </td>
+                                  <td >  <input [value]="affect"  class="form-control" type="text" name="val000"/> </td>
+                                  <td>
+
+                                  </td><td></td><td> <div class="form-check form-check-inline">
+                                    <input  class="form-check-input" type="checkbox" name="inlineRadioOptions22" id="inlineRadio22"  checked>
+                                    <label class="form-check-label" for="inlineRadio1">Adresse Actuel</label>
+                                  </div></td>
+                                  <td>
+
+                                  </td>
+                                 </tr>
+                        </table>
+                    </form>
+                        </div></div></div>
+
+                  <div *ngSwitchCase="2">
+                    <div class="card">
+                      <div class="card-body"> <form>
+                    <table>
+                        <tr><td>Telephone</td>
+                             <td>
+                                 <input [value]="adrpersbycodeandmat.tel_pers"  class="form-control" type="text" name="val000"/>
+                             </td>
+                             <td ></td>
+                             <td></td>
+                             <td>Fax</td>
+                             <td>
+                                 <input [value]="adrpersbycodeandmat.fax_pers"  class="form-control" type="text" name="val000"/>
+                             </td>
+
+                            </tr>  <tr><td>Gsm</td>
+                              <td>
+                                  <input [value] ="adrpersbycodeandmat.tel_port_pers" class="form-control" type="text" name="val000"/>
+                              </td>
+                              <td ></td>
+                              <td></td>
+                              <td>Adresse Electronique</td>
+                              <td>
+                                  <input [value] ="adrpersbycodeandmat.adr_electronique"   class="form-control" type="text" name="val000"/>
+                              </td>
+
+                             </tr></table></form></div></div></div>
+                  <div *ngSwitchCase="3"><app-gridadressenoncourant></app-gridadressenoncourant></div>
+                </div>
+
+               <!--  <div class="card">
+                  <div class="card-body">
+                    <div class="form-group row">
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Nom 2éme langue</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="password"
+                            class="form-control"
+                            placeholder="nom 2éme langue"
+                          />
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >prenom 2éme langue</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="prenom 2éme langue"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Presum Nais</label
+                        >
+                        <div class="col-sm-3">
+                          <select
+                            type="password"
+                            class="form-control"
+                            placeholder="Presum Nais"
+                          ></select>
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Service militaire</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Service militaire"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Date naissance</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="date"
+                            class="form-control"
+                            placeholder="nom 2éme langue"
+                          />
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Lieu naissance</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Lieu naissance"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Sexe</label
+                        >
+                        <div class="col-sm-3">
+                          <select
+                            class="form-control"
+                            placeholder="sexe"
+                          ></select>
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Nationalité</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Nationalité"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Type d'identité</label
+                        >
+                        <div class="col-sm-3">
+                          <select
+                            class="form-control"
+                            placeholder="Type d'identité"
+                          ></select>
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >N identité</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="N identité"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Date d'identité</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="date"
+                            class="form-control"
+                            placeholder="nom 2éme langue"
+                          />
+                        </div>
+
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Lieu émission identité</label
+                        >
+                        <div class="col-sm-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Lieu émission identité"
+                          />
+                        </div>
+                      </div>
+                      <br /><br />
+
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Sit.familiale</label
+                        >
+                        <div class="col-sm-3">
+                          <select
+                            type="password"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="Sit.familiale"
+                          ></select>
+                        </div>
+                        &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label
+                          for="inputPassword3"
+                          class="col-sm-2 col-form-label"
+                          >Groupe sanguin</label
+                        >
+                        <div class="col-sm-3">
+                          <select
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder="prenom 2éme langue"
+                          ></select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <div *ngSwitchCase="3">
+                <app-gridetablissement></app-gridetablissement>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="x == '2'">
+          <ul class="nav nav-tabs">
+            <li [ngClass]="{ active: tab == 1 }" (click)="tab = 1">
+              <a class="nav-link"><button id="ref" class="btn-btn sm" >  Information Generale</button></a>
+            </li>
+            <li [ngClass]="{ active: tab == 2 }" (click)="tab = 2">
+              <a class="nav-link"> <button id="ref" class="btn-btn sm" > Pointage</button></a>
+            </li>
+            <li [ngClass]="{ active: tab == 3 }" (click)="tab = 3">
+              <a class="nav-link"><button id="ref" class="btn-btn sm" > Mode de payement</button></a>
+            </li>
+            <li [ngClass]="{ active: tab == 4 }" (click)="tab = 4">
+              <a class="nav-link"><button id="ref" class="btn-btn sm" > Variable d'octroi dindemnité</button></a>
+            </li>
+            <li [ngClass]="{ active: tab == 5 }" (click)="tab = 5">
+              <a class="nav-link"><button id="ref" class="btn-btn sm" > Experiences professionnel</button></a>
+            </li>
+            <li [ngClass]="{ active: tab == 6 }" (click)="tab = 6">
+              <a class="nav-link"><button id="ref" class="btn-btn sm" > Indemnité</button></a>
+            </li>
+          </ul>
+          <div [ngSwitch]="tab">
+            <br />
+            <div *ngSwitchCase="1">
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Date d'embauche</label
+                >
+                <div class="col-sm-3">
+                  <input
+                  [value]="getbymatcod.dat_emb"
+                    type="text"
+                    class="form-control"
+                    placeholder="Nom 2éme langue"
+                    style="font-size: 12px;"
+                  />
+                </div>
+
+                &nbsp; &nbsp;
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Date d'entrée adminisration</label
+                >
+                <div class="col-sm-3">
+                  <input
+                  [value]="getbymatcod.dat_ent"
+                    type="text"
+                    class="form-control"
+                    id="inputPassword3"
+                    placeholder="Lieu naissance"
+                    style="font-size: 12px;"
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Date Titularisation</label
+                >
+                <div class="col-sm-3">
+                  <input
+                  [value]="getbymatcod.dat_tit"
+                    type="text"
+                    class="form-control"
+                    placeholder="Date Titularisation"
+                    style="font-size: 12px;"
+                  />
+                </div>
+
+                &nbsp; &nbsp;
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Contrat Fidelité</label
+                >
+                <div class="col-sm-3">
+                  <select
+                  [value]="rensper.contrat_fidelite"
+                    type="text"
+                    class="form-control"
+                    id="inputPassword3"
+                    placeholder="Lieu naissance"
+                    style="font-size: 12px;"
+                  ></select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Date Fin Fidelité</label
+                >
+                <div class="col-sm-3">
+                  <input
+                  [value]="rensper.dt_fin_fidelite"
+                    type="text"
+                    class="form-control"
+                    placeholder="Date Titularisation"
+                    style="font-size: 12px;"
+                  />
+                </div>
+              </div>
+            </div>
+            <div *ngSwitchCase="2">
+
+              <!-- <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Regime travail</label
+                >
+                <div class="col-sm-3">
+                  <select
+                    type="date"
+                    class="form-control"
+                    placeholder="Date Titularisation"
+                  ></select>
+                </div>
+
+                <div class="col-sm-1" >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputPassword4"
+                    placeholder=""
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Debut cycle</label
+                >
+                <div class="col-sm-3">
+                  <input
+                    type="date"
+                    class="form-control"
+                    placeholder="Date Titularisation"
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Code Regime</label
+                >
+                <div class="col-sm-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Date Titularisation"
+                  />
+                </div>
+                <div class="col-sm-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputPassword3"
+                    placeholder=""
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >Regime conge</label
+                >
+                <div class="col-sm-3">
+                  <select
+                    type="date"
+                    class="form-control"
+                    placeholder="Date Titularisation"
+                  ></select>
+                </div>
+
+                <div class="col-sm-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputPassword3"
+                    placeholder=""
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                  >signature</label
+                >
+                <div class="col-sm-3">
+                  <select
+                    type="text"
+                    class="form-control"
+                    placeholder="Date Titularisation"
+                  ></select>
+                </div>
+
+              </div> -->
+              <form>
+                <table>
+                    <tr><td>regime travail</td>
+                         <td>
+                             <input [value]="rensper.regime_trav"  class="form-control" type="text" name="val000"/>
+                         </td>
+                         <td ></td>
+                         <td>
+
+                         </td><td>Pelérinage</td>
+                         <td>
+                             <input  [value]="rensper.code_pelerinage" class="form-control" type="text" name="val000"/>
+                         </td>
+                        </tr>
+                        <tr><td>Debut Cycle</td>
+                          <td>
+                              <input [value]="deb"  class="form-control" type="text" name="val000"/>
+                          </td>
+                          <td ></td>
+                          <td>
+
+                          </td><td>Fin Cycle</td>
+                          <td>
+                              <input [value]="fin"  class="form-control" type="text" name="val000"/>
+                          </td>
+                         </tr>  <tr><td>Code Regime</td>
+                          <td>
+                              <input [value]="rensper.cod_reg"  class="form-control" type="text" name="val000"/>
+                          </td>
+                          <td ></td>
+                          <td>
+                              <input  [value]="ad" class="form-control" type="text" name="val000"/>
+                          </td><td>regime heure</td>
+                          <td>
+                              <input [value]="rensper.regime_heur"   class="form-control" type="text" name="val000"/>
+                          </td>
+                         </tr>  <tr><td>Regime Congé</td>
+                          <td>
+                              <input [value] ="rensper.reg_cng" class="form-control" type="text" name="val000"/>
+                          </td>
+                          <td ></td>
+                          <td>
+                              <input [value] ="get44"  class="form-control"  type="text" name="val000"/>
+                          </td><td>Pointe</td>
+                          <td>
+                              <input   [value]="rensper.num_pointeuse"  class="form-control" type="text" name="val000"/>
+                          </td>
+                         </tr>  <tr><td>Signature</td>
+                          <td>
+                              <input [value]="rensper.signature"  class="form-control" type="text" name="val000"/>
+                          </td>
+                          <td ></td>
+                          <td>
+
+                          </td><td></td>
+                          <td>
+
+                          </td>
+                         </tr>
+                </table>
+            </form>
+            </div>
+            <div *ngSwitchCase="3">   <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Bullettin</th>
+                  <th scope="col">Libelle</th>
+                  <th scope="col">Mode de payement</th>
+                  <th scope="col">Date</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+
+                </tr>
+                <tr>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                  <td>@fat</td>
+
+                </tr>
+              </tbody>
+            </table><br>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">N Compte</th>
+                  <th scope="col">Banque</th>
+                  <th scope="col">Code Banque SOC</th>
+                  <th scope="col">Agence</th>
+                  <th scope="col">Libelle</th>
+                  <th scope="col">CodAgSoc</th>
+                  <th scope="col">Domicialiation</th>
+                  <th scope="col">Date</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+
+                </tr>
+                <tr>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                  <td>@fat</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+
+                </tr>
+              </tbody>
+            </table></div>
+            <div *ngSwitchCase="4"> <form>
+              <table>
+                <tr><td>Droit Lait</td>
+                  <td>
+                      <input   class="form-control" type="text" name="val000"/>
+                  </td>
+                  <td ></td>
+                  <td>
+                      <input   class="form-control" type="text" name="val000"/>
+                  </td><td>Logement</td> <td>
+                    <input   class="form-control" type="text" name="val000"/>
+                </td>
+                  <td>
+                      <input   class="form-control" type="text" name="val000"/>
+                  </td>
+                 </tr>  <tr>
+                  <tr><td>Chaufage</td>
+                    <td>
+                        <input   class="form-control" type="text" name="val000"/>
+                    </td>
+                    <td ></td>
+                    <td>
+                        <input   class="form-control" type="text" name="val000"/>
+                    </td><td>Eau</td>
+                    <td>
+                        <input   class="form-control" type="text" name="val000"/>
+                    </td> <td>
+                      <input   class="form-control" type="text" name="val000"/>
+                  </td>
+                   </tr>  <tr>  <tr><td>Service DoMESTIQUE</td>
+                    <td>
+                        <input   class="form-control" type="text" name="val000"/>
+                    </td>
+                    <td ></td>
+                    <td>
+                        <input   class="form-control" type="text" name="val000"/>
+                    </td><td>Electricité</td> <td>
+                      <input   class="form-control" type="text" name="val000"/>
+                  </td>
+                    <td>
+                        <input   class="form-control" type="text" name="val000"/>
+                    </td>
+                   </tr>  <tr>  <tr><td>Résidence</td>
+                    <td>
+                        <input   class="form-control" type="text" name="val000"/>
+                    </td>
+                    <td ></td>
+                    <td>
+                        <input   class="form-control" type="text" name="val000"/>
+                    </td><td>Voiture</td> <td>
+                      <input   class="form-control" type="text" name="val000"/>
+                  </td>
+                    <td>
+                        <input   class="form-control" type="text" name="val000"/>
+                    </td>
+                   </tr>  <tr>  <tr><td>Baréme de Transport</td>
+                    <td>
+                        <input   class="form-control" type="text" name="val000"/>
+                    </td>
+                    <td ></td>
+                    <td>
+                        <input   class="form-control" type="text" name="val000"/>
+                    </td><td>Nb Mois Bonification</td> <td>
+                      <input   class="form-control" type="text" name="val000"/>
+                  </td>
+                    <td>
+                        <input   class="form-control" type="text" name="val000"/>
+                    </td>
+                   </tr>  <tr>
+              </table>
+          </form></div>
+            <div *ngSwitchCase="5"><table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Abr Fixe<div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="retour"
+                        placeholder=" Abr Fixe"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                <th scope="col">Nom Etablissement<div class="form-group row">
+                  <div class="col-sm">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="retour"
+                      placeholder="Nom Etablissement"
+                      style="font-size: 12px;"
+                    />
+                  </div>
+                </div>
+              </th>
+              <th scope="col">Etablissement<div class="form-group row">
+                <div class="col-sm">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="retour"
+                    placeholder=" Etablissement"
+                    style="font-size: 12px;"
+                  />
+                </div>
+              </div>
+            </th>
+            <th scope="col">Fonction<div class="form-group row">
+              <div class="col-sm">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="retour"
+                  placeholder="Fonction"
+                  style="font-size: 12px;"
+                />
+              </div>
+            </div>
+          </th>
+          <th scope="col">Fonction equivalante<div class="form-group row">
+            <div class="col-sm">
+              <input
+                type="text"
+                class="form-control"
+                id="retour"
+                placeholder="Fonction equivalante"
+                style="font-size: 12px;"
+              />
+            </div>
+          </div>
+        </th>
+        <th scope="col">Date debut<div class="form-group row">
+          <div class="col-sm">
+            <input
+              type="date"
+              class="form-control"
+              id="retour"
+              placeholder="Date debut"
+              style="font-size: 12px;"
+            />
+          </div>
+        </div>
+      </th>
+      <th scope="col">Date fin<div class="form-group row">
+        <div class="col-sm">
+          <input
+            type="date"
+            class="form-control"
+            id="retour"
+            placeholder="Date debut"
+            style="font-size: 12px;"
+          />
+        </div>
+      </div>
+    </th>
+    <th scope="col">Jours<div class="form-group row">
+      <div class="col-sm">
+        <input
+          type="text"
+          class="form-control"
+          id="retour"
+          placeholder="Jours"
+          style="font-size: 12px;"
+        />
+      </div>
+    </div>
+  </th>
+  <th scope="col">Mois<div class="form-group row">
+    <div class="col-sm">
+      <input
+        type="text"
+        class="form-control"
+        id="retour"
+        placeholder="Mois"
+        style="font-size: 12px;"
+      />
+    </div>
+  </div>
+</th>
+<th scope="col">Année<div class="form-group row">
+  <div class="col-sm">
+    <input
+      type="text"
+      class="form-control"
+      id="retour"
+      placeholder="Année"
+      style="font-size: 12px;"
+    />
+  </div>
+</div>
+</th>
+<th scope="col">Pec(o/n)<div class="form-group row">
+  <div class="col-sm">
+    <input
+      type="text"
+      class="form-control"
+      id="retour"
+      placeholder="Année"
+      style="font-size: 12px;"
+    />
+  </div>
+</div>
+</th>
+
+
+
+
+
+
+
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                      <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                  <td>@fat</td>
+                  <td>@fat</td>
+                  <td>@fat</td>
+                  <td>@fat</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                </tr>
+              </tbody>
+            </table></div>
+            <div *ngSwitchCase="6"><table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Abr Fixe<div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="retour"
+                        placeholder="N Etablissement"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">Libellé<div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="retour"
+                        placeholder="N Etablissement"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">Montant<div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="retour"
+                        placeholder="N Etablissement"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">DateInd<div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="retour"
+                        placeholder="N Etablissement"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">DateIndFin<div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="retour"
+                        placeholder="N Etablissement"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">NumNiv <div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="retour"
+                        placeholder="N Etablissement"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">TypePar <div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="retour"
+                        placeholder="N Etablissement"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">CodNiv <div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="retour"
+                        placeholder="N Etablissement"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+
+
+
+
+
+
+
+
+
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                      <td>@mdo</td>
+
+                </tr>
+                <tr>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                  <td>@fat</td>
+                  <td>@fat</td>
+                  <td>@fat</td>
+                  <td>@fat</td>
+                  <td>@mdo</td>
+                
+                </tr>
+              </tbody>
+            </table></div>
+          </div>
+        </div>
+        <div *ngIf="x == '3'">
+          <ul class="nav nav-tabs">
+            <li [ngClass]="{ active: tab == 1 }" (click)="tab = 1">
+              <a class="nav-link"> <button id="ref" class="btn-btn sm" >Information Generale</button></a>
+            </li>
+            <li [ngClass]="{ active: tab == 2 }" (click)="tab = 2">
+              <a class="nav-link"> <button id="ref" class="btn-btn sm" >Conjoint</button></a>
+            </li>
+            <li [ngClass]="{ active: tab == 3 }" (click)="tab = 3">
+              <a class="nav-link"><button id="ref" class="btn-btn sm" >Enfants</button></a>
+            </li>
+            <li [ngClass]="{ active: tab == 4 }" (click)="tab = 4">
+              <a class="nav-link"><button id="ref" class="btn-btn sm" >Scolarié Enfants</button></a>
+            </li>
+            <li [ngClass]="{ active: tab == 5 }" (click)="tab = 5">
+              <a class="nav-link"> <button id="ref" class="btn-btn sm" >Affilation</button></a>
+            </li>
+
+          </ul>
+          <div [ngSwitch]="tab">
+            <br />
+            <div *ngSwitchCase="1">
+              <form>
+                <table>
+                    <tr><td>Sit.Familiale</td>
+                         <td *ngIf="getbymatcod.cod_sit=='M'">
+                             <input value="Marié"  class="form-control" type="text" name="val000"/>
+                         </td> 
+                         <td *ngIf="getbymatcod.cod_sit=='C'">
+                          <input value="Celebataire"  class="form-control" type="text" name="val000"/>
+                      </td> 
+                      <td *ngIf="getbymatcod.cod_sit=='D'">
+                        <input value="Divorcé"  class="form-control" type="text" name="val000"/>
+                    </td> 
+                    <td *ngIf="getbymatcod.cod_sit=='V'">
+                      <input value="Veuf"  class="form-control" type="text" name="val000"/>
+                  </td> 
+
+                         
+                         
+                         
+                         
+                         <td>Chef Famille</td> <td>
+                          <input [value]="getbymatcod.chef_fam"  class="form-control" type="text" name="val000"/>
+                      </td> <td>Salaire Unique</td> <td>
+                        <input  [value]="getbymatcod.niv_sal" class="form-control" type="text" name="val000"/>
+                    </td></tr>
+                    <tr><td>Nbr.Enfant</td>
+                      <td>
+                          <input [value]="getbymatcod.nbre_enf"  class="form-control" type="text" name="val000"/>
+                      </td> <td>Enfant Imposable</td> <td>
+                       <input   class="form-control" type="text" name="val000"/>
+                   </td> <td>Enfant Allocataire</td> <td>
+                     <input   class="form-control" type="text" name="val000"/>
+                 </td></tr></table></form><hr>
+                 <form>
+                  <table>
+                      <tr><td>Etat Santé</td>
+                           <td>
+                               <input  [value]="getbymatcod.etat_sante" class="form-control" type="text" name="val000"/>
+                           </td> <td>Degré Handicap</td> <td>
+                            <input   class="form-control" type="text" name="val000"/>
+                        </td> <td>Type Handicap</td> <td>
+                          <input   class="form-control" type="text" name="val000"/>
+                      </td></tr>
+                      <tr><td>N°Fiche Handicap</td>
+                        <td>
+                            <input   class="form-control" type="text" name="val000"/>
+                        </td> <td>Date Effet Fiche</td> <td>
+                         <input   class="form-control" type="text" name="val000"/>
+                     </td> <td></td> <td>
+
+                   </td></tr>
+                   <tr><td>Taux pp</td>
+                    <td>
+                        <input   class="form-control" type="text" name="val000"/>
+                    </td> <td>Date Fin Fiche</td> <td>
+                     <input   class="form-control" type="text" name="val000"/>
+                 </td> <td></td> <td>
+
+               </td></tr></table></form><hr>
+               <form>
+                <table>
+                  <tr><td>N°Retraite</td>
+                    <td>
+                        <input   [value]="getbymatcod.num_retr "  form-control type="text" name="val000"/><td></td>
+                     <td>N°Accident de travail</td> <td>
+                     <input   class="form-control" type="text" name="val000"/>
+                 </td> <td></td>   <td> </td>
+               </tr>
+                    <tr><td>Assurance</td>
+                      <td>
+                          <input   class="form-control" type="text" name="val000"/><td><input disabled   class="form-control" type="text" name="val000"/></td>
+                       <td>N°Assurance</td> <td>
+                       <input [value]="getbymatcod.num_assur"  class="form-control" type="text" name="val000"/>
+                   </td> <td>Allocation Familiale</td>    <input   class="form-control" type="text" name="val000"/>
+                   <td>
+
+                 </td></tr></table></form>
+
+
+
+
+
+
+
+            </div><div *ngSwitchCase="2">
+             <input disabled
+                type="text"
+                class="form-control"
+                placeholder="Activité"
+                id="mm"
+                style="width: 30%;"
+                />
+                <hr>
+                <form>
+                  <table>
+                      <tr><td>Conjoint</td>
+                           <td>
+                               <input disabled  class="form-control" type="text" name="val000"/>
+                           </td>
+                           <td ></td>
+                           <td>
+
+                           </td><td>Date mariage</td>
+                           <td>
+                               <input  disabled class="form-control" type="text" name="val000"/>
+                           </td>
+                          </tr>
+                          <tr><td>Prénom</td>
+                            <td>
+                                <input  disabled class="form-control" type="text" name="val000"/>
+                            </td>
+                            <td ></td>
+                            <td>
+
+                            </td><td>Prénom 2éme langue</td>
+                            <td>
+                                <input disabled  class="form-control" type="text" name="val000"/>
+                            </td>
+                           </tr>  <tr><td>Nom</td>
+                            <td>
+                                <input  disabled class="form-control" type="text" name="val000"/>
+                            </td>
+                            <td ></td>
+                            <td>
+
+                            </td><td>Nom 2éme langue</td>
+                            <td>
+                                <input  disabled class="form-control" type="text" name="val000"/>
+                            </td>
+                           </tr>  <tr><td>Date de naissance</td>
+                            <td>
+                                <input disabled  class="form-control" type="text" name="val000"/>
+                            </td>
+                            <td ></td>
+                            <td>
+
+                            </td><td>Cin</td>
+                            <td>
+                                <input disabled  class="form-control" type="text" name="val000"/>
+                            </td>
+                           </tr> <tr><td>Date Cin</td>
+                            <td>
+                                <input  disabled class="form-control" type="text" name="val000"/>
+                            </td>
+                            <td></td>
+                           <td></td><td>Lieu emission Cin</td> <td>
+                                <input  disabled class="form-control" type="text" name="val000"/>
+                            </td>
+                           </tr>
+                  </table>
+              </form>
+            </div>
+            <div *ngSwitchCase="3"><table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Numero<div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="debut"
+                        placeholder="Numéro"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">Prénom<div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="debut"
+                        placeholder="Prénom"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">Activité<div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="debut"
+                        placeholder="Activité"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">Libellé<div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="debut"
+                        placeholder="Libélle"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">Date Naissance<div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="debut"
+                        placeholder="Chercher"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">Lieu Naissance<div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="debut"
+                        placeholder="Chercher"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">Sexe <div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="debut"
+                        placeholder="Chercher"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">Type Membre <div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="debut"
+                        placeholder="Chercher"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">Boursier<div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="debut"
+                        placeholder="Chercher"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">Etat <div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="debut"
+                        placeholder="Chercher"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">N°Fiche <div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="debut"
+                        placeholder="Chercher"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">Dt Fiche <div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="debut"
+                        placeholder="Chercher"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">Dt Fin Fiche <div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="debut"
+                        placeholder="Chercher"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+                  <th scope="col">Date DéCES<div class="form-group row">
+                    <div class="col-sm">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="debut"
+                        placeholder="Chercher"
+                        style="font-size: 12px;"
+                      />
+                    </div>
+                  </div>
+                </th>
+
+
+
+
+
+
+
+
+
+
+
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                      <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td> <td>@mdo</td> <td>@mdo</td> <td>@mdo</td> <td>@mdo</td>
+                </tr>
+                <tr>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                  <td>@fat</td>
+                  <td>@fat</td>
+                  <td>@fat</td>
+                  <td>@fat</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td> <td>@mdo</td> <td>@mdo</td> <td>@mdo</td>
+                </tr>
+              </tbody>
+            </table></div><div *ngSwitchCase="4"> <table  class="table table-hover table-sm">
+              <thead>
+                <tr>
+
+                  <th scope="col">
+Prénom                    <div class="form-group row">
+                      <div class="col-sm">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="debut"
+                          placeholder="Chercher"
+                          style="font-size: 12px;"
+                        />
+                      </div>
+                    </div>
+                  </th>
+                  <th scope="col">
+                   Date de naissance
+                    <div class="form-group row">
+                      <div class="col-sm">
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="fin"
+                          placeholder="Chercher"
+                          style="font-size: 12px;"
+                        />
+                      </div>
+                    </div>
+                  </th>
+                  <th scope="col">
+                   Sexe
+                    <div class="form-group row">
+                      <div class="col-sm-6">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="dateprevu"
+                          placeholder="Chercher"
+                          style="font-size: 12px;"
+                        />
+                      </div>
+                    </div>
+                  </th>
+
+
+
+
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+
+                  <td>24/06/2000</td>
+                  <td>02/07/2009</td>
+                  <td>03/07/2000</td>
+
+
+
+                  <td></td></tr></tbody></table></div><div *ngSwitchCase="5"> <table class="table table-hover table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">
+                    Année
+                    <div class="form-group row">
+                      <div class="col-sm">
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="annee"
+                          placeholder="Année"
+                          style="font-size: 12px;"
+                        />
+                      </div>
+                    </div>
+                  </th>
+                  <th scope="col">
+                    Date Début
+                    <div class="form-group row">
+                      <div class="col-sm">
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="debut"
+                          placeholder="Chercher"
+                          style="font-size: 12px;"
+                        />
+                      </div>
+                    </div>
+                  </th>
+                  <th scope="col">
+                    Date fin
+                    <div class="form-group row">
+                      <div class="col-sm">
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="fin"
+                          placeholder="Chercher"
+                          style="font-size: 12px;"
+                        />
+                      </div>
+                    </div>
+                  </th>
+                  <th scope="col">
+                    Date rétour prévue
+                    <div class="form-group row">
+                      <div class="col-sm-6">
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="dateprevu"
+                          placeholder="Chercher"
+                          style="font-size: 12px;"
+                        />
+                      </div>
+                    </div>
+                  </th>
+                  <th scope="col">
+                    Date rétour
+                    <div class="form-group row">
+                      <div class="col-sm">
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="retour"
+                          placeholder="Chercher"
+                          style="font-size: 12px;"
+                        />
+                      </div>
+                    </div>
+                  </th>
+                  <th scope="col">
+                    Nbre jour cal
+                    <div class="form-group row">
+                      <div class="col-sm">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="jour"
+                          placeholder="Chercher"
+                          style="font-size: 12px;"
+                        />
+                      </div>
+                    </div>
+                  </th>
+                  <th scope="col">
+                    Nbre jour
+                    <div class="form-group row">
+                      <div class="col-sm">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="nb"
+                          placeholder="Chercher"
+                          style="font-size: 12px;"
+                        />
+                      </div>
+                    </div>
+                  </th>
+                  <th scope="col">
+                    Cummul.Ret
+                    <div class="form-group row">
+                      <div class="col-sm">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="cumm"
+                          placeholder="Chercher"
+                          style="font-size: 12px;"
+                        />
+                      </div>
+                    </div>
+                  </th>
+                  <th scope="col">Etat</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">2018</th>
+                  <td>24/06/2000</td>
+                  <td>02/07/2009</td>
+                  <td>03/07/2000</td>
+                  <td>03/07/2011</td>
+                  <td>11</td>
+                  <td>12</td>
+                  <td></td></tr></tbody></table></div></div>
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

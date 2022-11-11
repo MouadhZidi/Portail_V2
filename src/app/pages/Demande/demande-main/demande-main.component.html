@@ -1,0 +1,1695 @@
+<div class="container-fluid">
+    <app-menu></app-menu>
+    <div class="row">
+      <!-- <div class="col-md-2"></div> -->
+      <div class="col-md-12" style="padding-left: 13.5%;width: 100%;">
+        <div class="card-body">
+          <div class="card">
+            <div class="card-body">
+              <h4 style="color: #001b85">Espace des demandes</h4>
+              <hr />
+              <table style="border: none" style="width: 100% ">
+                <tr>
+                  <td>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault1"
+                        [(ngModel)]="x"
+                        value="1"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Demande prêt & avances
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        value="2"
+                        name="flexRadioDefault"
+                        [(ngModel)]="x"
+                        id="flexRadioDefault2"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Autorisation
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        value="3"
+                        name="flexRadioDefault"
+                        [(ngModel)]="x"
+                        id="flexRadioDefault3"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault3">
+                         Formation
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        value="4"
+                        name="flexRadioDefault"
+                        [(ngModel)]="x"
+                        id="flexRadioDefault4"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault4">
+                        Congé
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        value="5"
+                        name="flexRadioDefault"
+                        [(ngModel)]="x"
+                        id="flexRadioDefault5"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault5">
+                        Situation
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        value="6"
+                        name="flexRadioDefault"
+                        [(ngModel)]="x"
+                        id="flexRadioDefault6"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault6">
+                        Document administratif
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <hr />
+          <div *ngIf="x== '1'">
+            <ul class="nav nav-tabs">
+                <div class="container-fluid" style="border: 1px">
+                    
+                    <div class="row">
+                        <div class="card">
+                          <div class="card-body">
+                            <h4 style="color: #001b85">Demande prêt & avances</h4>
+                            <hr>
+                           
+                            <form [formGroup]="formPretAvance">
+                              <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label"
+                                  >Date demande</label
+                                >
+                                <div class="col-sm-2">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputEmail3"
+                                    placeholder="Date demande"
+                                    style="font-size: 12px;"
+                                    formControlName="dateDemande"
+                                    readonly
+                                    
+                                  />
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                                  >Groupe prêt</label
+                                >
+                                <div class="col-sm-3">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputPassword3"
+                                    placeholder="Groupe prêt"
+                                    style="font-size: 12px;"
+                                    formControlName="codGrpPret"
+                                  />
+                                </div>
+                              </div>
+                  
+                              <div class="form-group row">
+                                <label for="inputPassword3" class="col-sm-2 col-form-label"
+                                  >Type prêt</label
+                                >
+                                <div class="col-sm-3">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputPassword3"
+                                    placeholder="Type prêt"
+                                    style="font-size: 12px;"
+                                    formControlName="typPret"
+                                    readonly
+                                  />
+                                </div>
+                
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label"
+                                      >Mantant</label
+                                    >
+                                    <div class="col-sm-2">
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        id="inputEmail3"
+                                        placeholder="Mantant demande"
+                                        style="font-size: 12px;"
+                                        formControlName="mntDem"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label"
+                                      >Observation</label
+                                    >
+                                    <div class="col-sm-2">
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        id="inputEmail3"
+                                        placeholder="Observation"
+                                        style="font-size: 12px;"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label
+                                      for="inputPassword3"
+                                      class="col-sm-2 col-form-label"
+                                      >Réponse</label
+                                    >
+                                    <div class="col-sm-3">
+                                    <select class="form-select" aria-label="Default select example" formControlName="reponse">
+                                      <option selected>Réponse</option>
+                                      <option value="O">O</option>
+                                      <option value="N">N</option>
+                                      
+                                    </select>
+                                  </div>
+                                  </div>
+                                  
+                                <div class="text-center">
+                                    <input class="form-control" type="file" 
+                                            (change)="onChange($event)">
+                                  
+                           
+                                    <button type="submit" class="btn btn-primary btn-sm" (click)="DemandePretAvance()">
+                                        Ajouter
+                                      </button>
+                                </div>
+                                  
+                                <!-- Shareable short link of  uploaded file -->
+                                <div class="container text-center jumbotron"
+                                    *ngIf="shortLink">
+                                    <h2> Visit Here</h2>
+                                    <a href="{{shortLink}}">{{shortLink}}</a>
+                                </div>
+                                  
+                                <!--Flag variable is used here-->
+                                <div class="container" *ngIf="loading">
+                                    <h3>Loading ...</h3>
+                                </div>
+                        
+                              </div>
+                  
+                              <div class="form-group row">
+                                <div class="col-sm-10">
+ 
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-body">
+                           
+<app-grid-demande-pret-avance></app-grid-demande-pret-avance>
+                          </div>
+                        </div>
+                        
+                      </div>
+
+                    </div>
+                
+                  
+            </ul>
+
+          </div>
+
+          <div *ngIf="x == '2'">
+            <ul class="nav nav-tabs">
+                <div class="container-fluid" style="border: 1px">
+                   
+
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-body">
+                              <h4 style="color: #001b85">Demande autorisation</h4>
+                              <hr>
+                              <form [formGroup]="formAutorisation">
+                              <div class="form-group row">
+                                <div class="form-group row">
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Date demande</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      placeholder="Date demande"
+                                      style="font-size: 12px;"
+                                      formControlName="dateDemande"
+                                      readonly
+                                    />
+                                  </div>
+          
+                                  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Type autorisation</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="inputPassword3"
+                                      placeholder="Type autorisation"
+                                      style="font-size: 12px;"
+                                      formControlName="typDemande"
+                                      readonly
+                                    />
+                                  </div>
+                                </div>
+                                <br /><br />
+          
+                                <div class="form-group row">
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    
+                                    >Heure sortie</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputPassword3"
+                                    placeholder="Heure sortie"
+                                    style="font-size: 12px;"
+                                    formControlName="heurS"
+                                  />
+                                  </div>
+          
+                                  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Minute sortie</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="inputPassword3"
+                                      placeholder="Minute sortie"
+                                      style="font-size: 12px;"
+                                      formControlName="minS"
+
+                                    />
+                                  </div>
+                                </div>
+                                <br /><br />
+          
+                                <div class="form-group row">
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Heure retour</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      placeholder="Heure retour"
+                                      style="font-size: 12px;"
+                                      formControlName="heurR"
+
+                                    />
+                                  </div>
+          
+                                  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Minute retour</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="inputPassword3"
+                                      placeholder="Minute retour"
+                                      style="font-size: 12px;"
+                                      formControlName="minR"
+
+                                    />
+                                  </div>
+                                </div>
+                                <br /><br />
+                                <div class="form-group row">
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Motif</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputPassword3"
+                                    placeholder="Motif"
+                                    style="font-size: 12px;"
+                                    formControlName="txtDem"
+                                  />
+                                  </div>
+          
+                                  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Réponse Rh</label>
+                                    <div class="col-sm-3">
+                                      <select class="form-select" aria-label="Default select example"
+                                      formControlName="reponse"
+                                      >
+                                        <option selected>Réponse</option>
+                                        <option value="O">O</option>
+                                        <option value="N">N</option>
+                                        
+                                      </select>
+                                    </div>
+                                  
+                                </div>
+                                <br /><br />
+                                <div class="form-group row">
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Réponse chef</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <select class="form-select" aria-label="Default select example"
+                                    formControlName="reponseChef"
+                                    >
+                                      <option selected>Réponse</option>
+                                      <option value="O">O</option>
+                                      <option value="N">N</option>
+                                      
+                                    </select>
+                                  </div>
+                                  
+          
+                                  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Observation chef</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="inputPassword3"
+                                      placeholder="Observation chef"
+                                      style="font-size: 12px;"
+                                      formControlName="txtChef"
+                                    />
+                                  </div>
+                                </div>
+                                <br /><br />
+                                <div class="form-group row">
+                                 
+          
+                                 <div class="text-center">
+                                    <input class="form-control" type="file" 
+                                            (change)="onChange($event)">
+                                  
+                                    <button (click)="DemandeAutorisation()" 
+                                        class="btn btn-success">
+                                        Upload
+                                    </button>
+                                </div>
+                                  
+                                <!-- Shareable short link of  uploaded file -->
+                                <div class="container text-center jumbotron"
+                                    *ngIf="shortLink">
+                                    <h2> Visit Here</h2>
+                                    <a href="{{shortLink}}">{{shortLink}}</a>
+                                </div>
+                                  
+                                <!--Flag variable is used here-->
+                                <div class="container" *ngIf="loading">
+                                    <h3>Loading ...</h3>
+                                </div>
+                        
+                            
+                                 
+                                </div>
+                            
+          
+                        
+                              </div>
+                            </form>
+                            </div>
+                          </div>
+                        <div class="card">
+                          <div class="card-body">
+                         
+<app-grid-demande-autorisation></app-grid-demande-autorisation>
+                          </div>
+                        </div>
+                        
+                      </div>
+
+                    </div>
+                
+                  
+            </ul>
+           </div>
+          <div *ngIf="x == '3'">
+            <ul class="nav nav-tabs">
+                <div class="container-fluid" style="border: 1px">
+                    
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-body">
+                              <h4 style="color: #001b85">Demande formation</h4>
+                              <hr>
+                              <form [formGroup]="formFormation">
+                              <div class="form-group row">
+                                <div class="form-group row">
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Date demande</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      placeholder="Date demande"
+                                      style="font-size: 12px;"
+                                      formControlName="dateDemande"
+                                      readonly
+                                    />
+                                  </div>
+          
+                                  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Année</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="inputPassword3"
+                                      placeholder="Année"
+                                      style="font-size: 12px;"
+                                      formControlName="annee"
+
+                                    />
+                                  </div>
+                                </div>
+                                <br /><br />
+          
+                                <div class="form-group row">
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Titre de formation</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <select class="form-select" aria-label="Default select example" 
+                                    (change)="onSelect($event)"  formControlName="codTit"
+                                    >
+                                      <option *ngFor="let i of titreFormation" value="{{i.cod_tit}}"> {{i.lib_tit}}</option>
+                                    </select>
+                                    <br>
+                                  </div>
+                         
+                                 
+          
+                                  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Domaine de formation</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <select class="form-select" aria-label="Default select example" formControlName="codTyp">
+                                      <option *ngFor="let i of typeFormation" value="{{i.cod_typ}}"> {{i.lib_typ}}</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <br /><br />
+          
+                                <div class="form-group row">
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Théme</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <select class="form-select" aria-label="Default select example" formControlName="codTheme">
+                                      <option *ngFor="let i of themeFormations" value="{{i.codTheme}}"> {{i.libTheme}}</option>
+                                    </select>
+                                  </div>
+          
+                                  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Date début</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="inputPassword3"
+                                      placeholder="Date début"
+                                      style="font-size: 12px;"
+                                      formControlName="datDebut"
+                                    />
+                                  </div>
+                                </div>
+                                <br /><br />
+                                <div class="form-group row">
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Date fin</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputPassword3"
+                                    placeholder="Date fin"
+                                    style="font-size: 12px;"
+                                    formControlName="datFin"
+                                  />
+                                  </div>
+          
+                                  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <!-- <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Obsérvation</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="inputPassword3"
+                                      placeholder="Obsérvation"
+                                      style="font-size: 12px;"
+                                    />
+                                  </div> -->
+                                </div>
+                                <br /><br />
+                                <div class="form-group row">
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Réponse</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputPassword3"
+                                    placeholder="Réponse"
+                                    style="font-size: 12px;"
+                                    formControlName="reponse"
+                                  />
+                                  </div>
+          
+                                  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Réponse chef</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="inputPassword3"
+                                      placeholder="Réponse chef"
+                                      style="font-size: 12px;"
+                                      formControlName="reponseChef"
+                                    />
+                                  </div>
+                                </div>
+                                <br /><br />
+                                <div class="form-group row">
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Observation chef</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      placeholder="Observation chef"
+                                      style="font-size: 12px;"
+                                      formControlName="txtChef"
+                                    />
+                                  </div>
+          
+                                 <div class="text-center">
+                                    <input class="form-control" type="file" 
+                                            (change)="onChange($event)">
+                                  
+                                    <button (click)="DemandeFormation()" 
+                                        class="btn btn-success">
+                                        Upload
+                                    </button>
+                                </div>
+                                  
+                                <!-- Shareable short link of  uploaded file -->
+                                <div class="container text-center jumbotron"
+                                    *ngIf="shortLink">
+                                    <h2> Visit Here</h2>
+                                    <a href="{{shortLink}}">{{shortLink}}</a>
+                                </div>
+                                  
+                                <!--Flag variable is used here-->
+                                <div class="container" *ngIf="loading">
+                                    <h3>Loading ...</h3>
+                                </div>
+                        
+                            
+                                 
+                                </div>
+                            
+          
+                        
+                              </div>
+                              {{formFormation.value|json}}
+
+                            </form>
+                            </div>
+                          </div>
+                        <div class="card">
+                          <div class="card-body">
+                            <app-grid-demande-formation></app-grid-demande-formation>
+
+                          </div>
+                        </div>
+                        
+                      </div>
+
+                    </div>
+                
+                  
+            </ul>
+            <div [ngSwitch]="tab">
+              <br />
+              
+              <div *ngSwitchCase="6">
+                <div class="card">
+                  <div class="card-body">
+                    <h6 style="color: #001b85">Edition Bulletin De Paie</h6>
+                    <button
+                      type="button"
+                      class="btn btn-labeled btn-danger"
+                      style="float: right"
+                      printTitle="Print Title"
+                      printSectionId="print-section"
+                      ngxPrint
+                    >
+                      <span class="btn-label"><i class="fa fa-print"> </i></span>
+                      Imprimer
+                    </button>
+                    <hr />
+  
+  
+  
+  <table class="demo" id="print-section">
+    <tbody>
+      <tr>
+        <td>Mois</td>
+        <td>
+          <input
+            type="date"
+            class="form-control"
+            id="inputEmail3"
+          />
+        </td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>Type de bulletin</td>
+        <td>
+          <select
+            name="bulletin"
+            id="bulletin"
+            class="form-select form-select-sm"
+            aria-label=".form-select-sm example"
+          >
+            <option value="none"></option>
+            <option value="annulation">
+              Bulletin d'annulation
+            </option>
+            <option value="attestation">
+              Bulletin attestation théorique
+            </option>
+            <option value="anterieur">
+              Bulletin antérieur
+            </option>
+            <option value="divers">Bulletin divers</option>
+            <option value="gratification">
+              Prime de gratification
+            </option>
+            <option value="mois">Bulletin du mois</option>
+            <option value="rappel">Bulletin Rappel</option>
+            <option value="theorique">
+              Bulletin théorique
+            </option>
+            <option value="capacite">Capacité</option>
+            <option value="effort">Prime d'éffort</option>
+            <option value="carriere">
+              Prime fin de carrière
+            </option>
+            <option value="theorique">Théorique</option>
+            <option value="envers">Bulletin à l'envers</option>
+            <option value="solde">Sole de tout compte</option>
+            <option value="simulation">Simulation</option>
+          </select>
+        </td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>
+          Matricule Début
+          <i
+            class="fas fa-search"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          ></i>
+  
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5
+                    class="modal-title"
+                    id="exampleModalLabel"
+                  >
+                    Rechercher
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <table style="border: none">
+                    <tr>
+                      <td>Correspondance</td>
+                      <td width="40%">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexRadioDefault1"
+                          >
+                            Tout
+                          </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault2"
+                            checked
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexRadioDefault2"
+                          >
+                            N'importe quel
+                          </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Matricule</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="matricule"
+                        />
+                      </td>
+                    </tr>
+  
+                    <tr>
+                      <td>Nom et prénom</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="nom"
+                        />
+                      </td>
+                    </tr>
+                  </table>
+  
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-success btn-sm"
+                      data-bs-dismiss="modal"
+                    >
+                      Rechercher
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger btn-sm"
+                    >
+                      Réinitialiser
+                    </button>
+                  </div>
+  
+                  <div class="card">
+                    <div class="card-body">
+                      <table style="text-align: center">
+                        <tr>
+                          <th>Matricule</th>
+                          <th>Nom et prénom</th>
+                        </tr>
+  
+                        <tr>
+                          <td>5000</td>
+                          <td>Demo Demo</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary btn-sm"
+                    data-bs-dismiss="modal"
+                  >
+                    OK
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-sm"
+                  >
+                    Annuler
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <input
+            type="text"
+            class="form-control"
+            id="inputPassword3"
+            placeholder="Matricule début"
+            style="font-size: 12px"
+          />
+        </td>
+        <td>
+          Matricule Fin
+  
+          <i
+            class="fas fa-search"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          ></i>
+  
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5
+                    class="modal-title"
+                    id="exampleModalLabel"
+                  >
+                    Rechercher
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <table style="border: none">
+                    <tr>
+                      <td>Correspondance</td>
+                      <td width="40%">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexRadioDefault1"
+                          >
+                            Tout
+                          </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault2"
+                            checked
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexRadioDefault2"
+                          >
+                            N'importe quel
+                          </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Matricule</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="matricule"
+                        />
+                      </td>
+                    </tr>
+  
+                    <tr>
+                      <td>Nom et prénom</td>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="nom"
+                        />
+                      </td>
+                    </tr>
+                  </table>
+  
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-success btn-sm"
+                      data-bs-dismiss="modal"
+                    >
+                      Rechercher
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger btn-sm"
+                    >
+                      Réinitialiser
+                    </button>
+                  </div>
+  
+                  <div class="card">
+                    <div class="card-body">
+                      <table style="text-align: center">
+                        <tr>
+                          <th>Matricule</th>
+                          <th>Nom et prénom</th>
+                        </tr>
+  
+                        <tr>
+                          <td>5000</td>
+                          <td>Demo Demo</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary btn-sm"
+                    data-bs-dismiss="modal"
+                  >
+                    OK
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-sm"
+                  >
+                    Annuler
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <input
+            type="text"
+            class="form-control"
+            id="inputPassword3"
+            placeholder="Matricule début"
+            style="font-size: 12px"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Choix</td>
+        <td>
+          <select
+          name="bulletin"
+          id="bulletin"
+          class="form-select form-select-sm"
+          aria-label=".form-select-sm example"
+        >
+          <option value="none"></option>
+          <option value="afiarabe">
+            Bulletin paie AFI Arabe
+          </option>
+          <option value="paie">Bulletin de paie</option>
+          <option value="matricielle">
+            Bulletin de paie matricielle
+          </option>
+          <option value="a4">Fiche de paie A4</option>
+          <option value="afi">Bulletin de paie AFI</option>
+          <option value="NBVMT">Bulletin de paie NBVMT</option>
+        </select>
+        </td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </tbody>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary btn-sm">
+          <i class="fas fa-tools"> Préparer</i>
+        </button>
+      </div>
+    </div>
+  </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="x == '4'">
+            <ul class="nav nav-tabs">
+                <div class="container-fluid" style="border: 1px">
+                    
+
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-body">
+                              <h4 style="color: #001b85">Demande congé</h4>
+                              <hr>
+                              <div class="form-group row">
+                                <div class="form-group row">
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Date demande</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="date"
+                                      class="form-control"
+                                      placeholder="Date demande"
+                                      style="font-size: 12px;"
+                                    />
+                                  </div>
+          
+                                  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Date début</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="date"
+                                      class="form-control"
+                                      id="inputPassword3"
+                                      placeholder="Date début"
+                                      style="font-size: 12px;"
+                                    />
+                                  </div>
+                                </div>
+                                <br /><br />
+          
+                                <div class="form-group row">
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Date fin</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                    type="date"
+                                    class="form-control"
+                                    id="inputPassword3"
+                                    placeholder="Date fin"
+                                    style="font-size: 12px;"
+                                  />
+                                  </div>
+          
+                                  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Unité de congé</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="number"
+                                      class="form-control"
+                                      id="inputPassword3"
+                                      placeholder="Unité de congé"
+                                      style="font-size: 12px;"
+                                    />
+                                  </div>
+                                </div>
+                                <br /><br />
+          
+                                <div class="form-group row">
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Séance début</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      placeholder="Séance début"
+                                      style="font-size: 12px;"
+                                    />
+                                  </div>
+          
+                                  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Séance fin</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="inputPassword3"
+                                      placeholder="Séance fin"
+                                      style="font-size: 12px;"
+                                    />
+                                  </div>
+                                </div>
+                                <br /><br />
+                                <div class="form-group row">
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Motif</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputPassword3"
+                                    placeholder="Motif"
+                                    style="font-size: 12px;"
+                                  />
+                                  </div>
+          
+                                  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Observation</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="inputPassword3"
+                                      placeholder="Obsérvation"
+                                      style="font-size: 12px;"
+                                    />
+                                  </div>
+                                </div>
+                                <br /><br />
+                                <div class="form-group row">
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Réponse Rh</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputPassword3"
+                                    placeholder="Réponse Rh"
+                                    style="font-size: 12px;"
+                                  />
+                                  </div>
+          
+                                  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Réponse chef</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="inputPassword3"
+                                      placeholder="Réponse chef"
+                                      style="font-size: 12px;"
+                                    />
+                                  </div>
+                                </div>
+                                <br /><br />
+                                <div class="form-group row">
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Observation chef</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      placeholder="Observation chef"
+                                      style="font-size: 12px;"
+                                    />
+                                  </div>
+          
+                                 <div class="text-center">
+                                    <input class="form-control" type="file" 
+                                            (change)="onChange($event)">
+                                  
+                                    <button (click)="onUpload()" 
+                                        class="btn btn-success">
+                                        Upload
+                                    </button>
+                                </div>
+                                  
+                                <!-- Shareable short link of  uploaded file -->
+                                <div class="container text-center jumbotron"
+                                    *ngIf="shortLink">
+                                    <h2> Visit Here</h2>
+                                    <a href="{{shortLink}}">{{shortLink}}</a>
+                                </div>
+                                  
+                                <!--Flag variable is used here-->
+                                <div class="container" *ngIf="loading">
+                                    <h3>Loading ...</h3>
+                                </div>
+                        
+                            
+                                 
+                                </div>
+                            
+          
+                        
+                              </div>
+                            </div>
+                          </div>
+                        <div class="card">
+                          <div class="card-body">
+                            
+
+                          </div>
+                        </div>
+                        
+                      </div>
+
+                    </div>
+                
+                  
+            </ul>
+           </div>
+           <div *ngIf="x == '5'">
+            <ul class="nav nav-tabs">
+                <div class="container-fluid" style="border: 1px">
+                    
+
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-body">
+                              <h4 style="color: #001b85">Demande situation</h4>
+                              <hr>
+                              <form [formGroup]="dataForm">
+                                <div class="row">
+                                    <div class="card">
+                                        <div class="card-body">
+                                          <div class="form-group row">
+                                            <div class="form-group row">
+                                              <label
+                                                for="inputPassword3"
+                                                class="col-sm-2 col-form-label"
+                                                >Date demande</label
+                                              >
+                                              <div class="col-sm-3">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  placeholder="Date demande"
+                                                  formControlName="dateDemande"
+                                                 readonly
+                                                  />
+                                              </div>
+                      
+                                              &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                                              &nbsp;&nbsp;&nbsp;&nbsp;
+                                              <label
+                                                for="inputPassword3"
+                                                class="col-sm-2 col-form-label"
+                                                >Objet de changement</label
+                                              >
+                                              <div class="col-sm-3">
+                                                <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  id="inputPassword3"
+                                                  placeholder="bjet de changement"
+                                                  formControlName="txtDem"
+                                                />
+                                              </div>
+                                            </div>
+                                            <br /><br />
+                      
+                                            <div class="form-group row">
+                                              <label
+                                                for="inputPassword3"
+                                                class="col-sm-2 col-form-label"
+                                                >Réponse</label
+                                              >
+                                              <div class="col-sm-3">
+                                              <select class="form-select" aria-label="Default select example">
+                                                <option selected>Réponse</option>
+                                                <option value="O">O</option>
+                                                <option value="N">N</option>
+                                                
+                                              </select>
+                                            </div>
+                                       
+                                              
+                      
+                                             <div class="text-center" class="col-sm-3">
+                                                <input class="form-control" type="file" 
+                                                        (change)="onChange($event)">
+                                              
+                                                <button (click)="onUpload()" 
+                                                    class="btn btn-success">
+                                                    Upload
+                                                </button>
+                                            </div>
+                                              
+                                            <!-- Shareable short link of  uploaded file -->
+                                            <div class="container text-center jumbotron"
+                                                *ngIf="shortLink">
+                                                <h2> Visit Here</h2>
+                                                <a href="{{shortLink}}">{{shortLink}}</a>
+                                            </div>
+                                              
+                                            <!--Flag variable is used here-->
+                                            <div class="container" *ngIf="loading">
+                                                <h3>Loading ...</h3>
+                                            </div>
+                                    
+                                        
+                                             
+                                            </div>
+                                        
+                      
+                                    
+                                          </div>
+                                        </div>
+                                      </div>
+                                    <div class="card">
+                                      <div class="card-body">
+
+                                      <app-grid-demande-situation></app-grid-demande-situation>
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                                  {{dataForm.value|json}}
+                                </form>
+                              
+                            </div>
+                          </div>
+                        <div class="card">
+                          <div class="card-body">
+                           
+
+                          </div>
+                        </div>
+                        
+                      </div>
+
+                    </div>
+                
+                  
+            </ul>
+           </div>
+           <div *ngIf="x == '6'">
+            <ul class="nav nav-tabs">
+                <div class="container-fluid" style="border: 1px">
+                    
+
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-body">
+                              <h4 style="color: #001b85">Demande documents administratifs</h4>
+                              <hr>
+                              <form [formGroup]="formDocument">
+                              <div class="form-group row">
+                                <div class="form-group row">
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Date demande</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      placeholder="Date demande"
+                                      style="font-size: 12px;"
+                                      formControlName="dateDemande"
+                                      readonly
+                                    />
+                                  </div>
+          
+                                  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Attestation</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="inputPassword3"
+                                      placeholder="Attestation"
+                                      style="font-size: 12px;"
+                                      formControlName="numAttest"
+                                    />
+                                  </div>
+                                </div>
+                                <br /><br />
+          
+                                <div class="form-group row">
+                                  <label
+                                    for="inputPassword3"
+                                    class="col-sm-2 col-form-label"
+                                    >Observation</label
+                                  >
+                                  <div class="col-sm-3">
+                                    <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputPassword3"
+                                    placeholder="Observation"
+                                    style="font-size: 12px;"
+                                    formControlName="txtChef"
+                                  />
+                                  </div>
+          
+                                  &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  
+          
+                                 <div class="text-center">
+                                    <input class="form-control" type="file" 
+                                            (change)="onChange($event)">
+                                  
+                                    <button (click)="DemandeDocument()" 
+                                        class="btn btn-success">
+                                        Upload
+                                    </button>
+                                </div>
+                                  
+                                <!-- Shareable short link of  uploaded file -->
+                                <div class="container text-center jumbotron"
+                                    *ngIf="shortLink">
+                                    <h2> Visit Here</h2>
+                                    <a href="{{shortLink}}">{{shortLink}}</a>
+                                </div>
+                                  
+                                <!--Flag variable is used here-->
+                                <div class="container" *ngIf="loading">
+                                    <h3>Loading ...</h3>
+                                </div>
+                                
+                                <label
+                                for="inputPassword3"
+                                class="col-sm-2 col-form-label"
+                                >Réponse Rh</label
+                              >
+                              <div class="col-sm-3">
+                                <input
+                                type="text"
+                                class="form-control"
+                                id="inputPassword3"
+                                placeholder="Observation"
+                                style="font-size: 12px;"
+                                formControlName="reponse"
+                              />
+                              </div>
+                            
+                                 
+                                </div>
+                            
+          
+                        
+                              </div>
+                            </form>
+                            </div>
+                          </div>
+                        <div class="card">
+                          <div class="card-body">
+                           
+<app-grid-demande-document></app-grid-demande-document>
+                          </div>
+                        </div>
+                        
+                      </div>
+
+                    </div>
+                
+                  
+            </ul>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

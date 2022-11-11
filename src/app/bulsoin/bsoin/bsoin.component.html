@@ -1,0 +1,328 @@
+<app-menu></app-menu>
+<div class="container-fluid">
+  <div class="row">
+    <!-- <div class="col-md-2"></div> -->
+    <div class="col-md-12" style="padding-left: 13.5%;width: 100%;">
+      <div class="card-body">
+        <div class="card">
+          <div class="card-body">
+            <div class="centopp">
+              <table style="border: none;">
+                <tr>
+                  <td>
+                    <h4 style="color: #001B85;">Consultation bulletin de soin</h4>
+                  </td>
+                  <td>
+                    <mat-icon type="button" class=" btnrecherche"  data-bs-toggle="modal"  data-bs-target="#exampleModal" tabindex="1"> search</mat-icon>
+                  </td>
+                </tr>
+              
+              </table>
+
+              <hr />
+
+              <!-- Button trigger modal -->
+
+              <!--button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <Modal -->
+              <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Consultation d'opposition
+                      </h1>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+
+                    <div class="modal-body">
+                      <div class="form-group">
+                        <p style="">Matricule :</p>
+                        <input type="text" name="matricule" />
+                      </div>
+                      <br />
+                      <div class="form-group">
+                        <p style="">Prêt :</p>
+                        <input type="text" name="matricule" />
+                      </div>
+                      <button
+                        type="button"
+                        class="btn btn-outline-primary btnrecherche"
+                      >
+                        Recherche
+                      </button>
+                      <br />
+
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">Matricule</th>
+                            <th scope="col">Nom & Prénom</th>
+                            <th scope="col">Code Prêt</th>
+                            <th scope="col">Libellé</th>
+                            <th scope="col">Organisme</th>
+                            <th scope="col">Libellé</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr (click)="anotherFunction($event)">
+                            <th scope="row">opps.id</th>
+                            <td>opps.nom</td>
+                            <td>opps.matricule</td>
+                            <td>opps.code</td>
+                            <td>opps.libelleC</td>
+                            <td>opps.organisme</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Fermer
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cadre-table-scroll">
+                <table class="table table-borderless" style="width: 100%">
+                  <table class="table table-borderless" style="width: 100%">
+                    <tbody>
+                      <tr>
+                        <td style="text-align: center" scope="row">Adhérent</td>
+                        <td>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder=""
+                            style="font-size: 12px"
+                            required
+                          />
+                        </td>
+                        <td>
+                          <mat-icon
+                            type="button"
+                            class="searchicon"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"
+                            tabindex="1"
+                          >
+                            search</mat-icon
+                          >
+                        </td>
+                        <td style="text-align: center" scope="row">
+                          Matricule pers
+                        </td>
+                        <td>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder=""
+                            style="font-size: 12px"
+                          />
+                        </td>
+                        <td style="text-align: center" scope="row">
+                          Référence Bulletin
+                        </td>
+                        <td>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputPassword3"
+                            placeholder=""
+                            style="font-size: 12px"
+                          />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </table>
+              </div>
+
+              <br />
+              <br />
+              <table class="table align-middle mb-0 bg-white">
+                <thead class="bg-light">
+                  <tr>
+                    <th style="text-align: center">N</th>
+                    <th style="text-align: center">Date Acte</th>
+                    <th style="text-align: center">Acte</th>
+                    <th style="text-align: center">Libellé Acte</th>
+                    <th style="text-align: center">Pce</th>
+                    <th style="text-align: center">Vge</th>
+                    <th style="text-align: center">Ind</th>
+                    <th style="text-align: center">Montant Acte</th>
+                    <th style="text-align: center; width: 10">Montant Rremb</th>
+                    <th style="text-align: center">Etab</th>
+                    <th style="text-align: center">Libellé etab</th>
+                    <th style="text-align: center">remb cong</th>
+                    <th style="text-align: center; margin-left: 20px">
+                      Observation
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                          <p class="">John Doe</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="fw-normal mb-1">Software engineer</p>
+                    </td>
+                    <td>
+                      <span class="badge badge-success rounded-pill d-inline"
+                        >Active</span
+                      >
+                    </td>
+                    <td>Senior</td>
+                    <td></td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                          <p class="">John Doe</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="fw-normal mb-1">Software engineer</p>
+                    </td>
+                    <td>
+                      <span class="badge badge-success rounded-pill d-inline"
+                        >Active</span
+                      >
+                    </td>
+                    <td>Senior</td>
+                    <td></td>
+                    <td>
+                      <p class="fw-normal mb-1">Software engineer</p>
+                    </td>
+                    <td>
+                      <span class="badge badge-success rounded-pill d-inline"
+                        >Active</span
+                      >
+                    </td>
+                    <td>Senior</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                          <p class="">Alex Ray</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="fw-normal mb-1">Consultant</p>
+                    </td>
+                    <td>
+                      <span class="badge badge-primary rounded-pill d-inline"
+                        >Onboarding</span
+                      >
+                    </td>
+                    <td>Junior</td>
+                    <td></td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                          <p class="">John Doe</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="fw-normal mb-1">Software engineer</p>
+                    </td>
+                    <td>
+                      <span class="badge badge-success rounded-pill d-inline"
+                        >Active</span
+                      >
+                    </td>
+                    <td>Senior</td>
+                    <td></td>
+                    <td>
+                      <p class="fw-normal mb-1">Software engineer</p>
+                    </td>
+                    <td>
+                      <span class="badge badge-success rounded-pill d-inline"
+                        >Active</span
+                      >
+                    </td>
+                    <td>Senior</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                          <p class="">Kate Hunington</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="fw-normal mb-1">Designer</p>
+                    </td>
+                    <td>
+                      <span class="badge badge-warning rounded-pill d-inline"
+                        >Awaiting</span
+                      >
+                    </td>
+                    <td>Senior</td>
+                    <td></td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                          <p class="">John Doe</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="fw-normal mb-1">Software engineer</p>
+                    </td>
+                    <td>
+                      <span class="badge badge-success rounded-pill d-inline"
+                        >Active</span
+                      >
+                    </td>
+                    <td>Senior</td>
+                    <td></td>
+                    <td>
+                      <p class="fw-normal mb-1">Software engineer</p>
+                    </td>
+                    <td>
+                      <span class="badge badge-success rounded-pill d-inline"
+                        >Active</span
+                      >
+                    </td>
+                    <td>Senior</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
